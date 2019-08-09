@@ -7,13 +7,14 @@ public class characterController : MonoBehaviour
     public float speed = 10.0f;
     public float jumpImpulse = 20.0f;
     private Rigidbody rb;
-    public GameObject Palm;
+    private Animator _animator; 
     
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         rb = gameObject.GetComponent<Rigidbody>();
+        _animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -31,5 +32,10 @@ public class characterController : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
            rb.AddForce(new Vector3(0, jumpImpulse, 0), ForceMode.Impulse);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            _animator.SetBool("is_attacking", true);
+        }
     }
 }
