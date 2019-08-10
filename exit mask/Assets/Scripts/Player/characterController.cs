@@ -37,5 +37,9 @@ public class characterController : MonoBehaviour
         {
             _animator.SetBool("is_attacking", true);
         }
+        else
+        {
+            _animator.SetBool("is_attacking", false);
+        }
     }
 }
