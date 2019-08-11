@@ -33,6 +33,7 @@ public class characterController : MonoBehaviour
         if (Input.GetKeyDown("space"))
            rb.AddForce(new Vector3(0, jumpImpulse, 0), ForceMode.Impulse);
 
+        // left click to attack
         if (Input.GetMouseButtonDown(0))
         {
             _animator.SetBool("is_attacking", true);
@@ -40,6 +41,16 @@ public class characterController : MonoBehaviour
         else
         {
             _animator.SetBool("is_attacking", false);
+        }
+
+        // right click to self-harm
+        if (Input.GetMouseButtonDown(1))
+        {
+            _animator.SetBool("is_attacking_self", true);
+        }
+        else
+        {
+            _animator.SetBool("is_attacking_self", false);
         }
     }
 }
