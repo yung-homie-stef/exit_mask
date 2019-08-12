@@ -26,8 +26,6 @@ public class BoxCutter : MonoBehaviour
     {
         if (pickUpAllowed && Input.GetKeyDown(KeyCode.E)) // when the player is in the collision box and presses E pick up box cutter
            PickUp();
-
-
     }
 
     private void OnTriggerEnter(Collider collision)
