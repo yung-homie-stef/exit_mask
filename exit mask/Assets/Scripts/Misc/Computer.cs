@@ -20,7 +20,7 @@ public class Computer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hackingAllowed && Input.GetKeyDown(KeyCode.E)) // when the player is in the collision box and presses E hack computer
+        if (hackingAllowed && Input.GetKeyDown(KeyCode.E)) // when the player is in the collision box and presses E they hack the computer
             Hack();
     }
 
