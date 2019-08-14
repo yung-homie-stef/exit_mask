@@ -10,6 +10,7 @@ public class Computer : MonoBehaviour
     private IEnumerator hackCoroutine;
 
     public GameObject Player;
+    public GameObject Exit;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +60,8 @@ public class Computer : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime); // wait for the alotted time, set the hack flag to false and disable this script
         _animator.SetBool("can_hack", false);
+        Exit.GetComponent<mazeExit>().DecrementPCCount();
+        
         this.enabled = false;
     }
 }
