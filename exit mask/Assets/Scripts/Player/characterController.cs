@@ -6,6 +6,8 @@ public class characterController : MonoBehaviour
 {
     public float speed = 10.0f;
     public float jumpImpulse = 20.0f;
+    public GameObject[] fumes; // array filled by looking for every enemy with proper tag
+
     private Rigidbody rb;
     private Animator _animator; 
     
@@ -15,6 +17,8 @@ public class characterController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         rb = gameObject.GetComponent<Rigidbody>();
         _animator = gameObject.GetComponent<Animator>();
+
+       
     }
 
     // Update is called once per frame
@@ -47,10 +51,25 @@ public class characterController : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             _animator.SetBool("is_attacking_self", true);
+            StunEnemies(); // causes enemies to be stunned
         }
         else
         {
             _animator.SetBool("is_attacking_self", false);
+            
+        }
+    }
+
+
+    void StunEnemies()
+    {
+        // look for every Fume enemy and fill an array with them
+            fumes = GameObject.FindGameObjectsWithTag("Fume_Enemy");
+
+        foreach(GameObject fume in fumes)
+        {
+            // for each Fume in this scene, call its stun method
+            fume.GetComponent<stunEnemy>().SetStun();
         }
     }
 }
