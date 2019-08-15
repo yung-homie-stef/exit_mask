@@ -28,6 +28,5 @@ public class mazeExit : MonoBehaviour
     {
         // every time a computer is hacked reduce this number. signifies one objective being cleared
         pcCount--;
-        Debug.Log("decremented" + pcCount);
     }
 }

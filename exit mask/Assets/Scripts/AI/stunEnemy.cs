@@ -12,10 +12,20 @@ public class stunEnemy : MonoBehaviour
         _animator = gameObject.GetComponent<Animator>();
     }
 
-   public void SetStun()
+    public void SetStun()
     {
         // when this method is called, stun the Fume enemy
         // TODO: add coroutines to delay stun until player's wrist is done being slit
         _animator.SetBool("is_stunned", true);
+      
     }
+
+    public void BreakStun()
+    {
+        _animator.SetBool("is_stunned", false);
+        Debug.Log("booyah");
+    }
+
+  
+
 }
