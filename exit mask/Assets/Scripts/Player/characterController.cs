@@ -9,8 +9,7 @@ public class characterController : MonoBehaviour
     public GameObject[] fumes; // array filled by looking for every enemy with proper tag
 
     private Rigidbody rb;
-    private Animator _animator; 
-    
+    private Animator _animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,7 +68,9 @@ public class characterController : MonoBehaviour
         foreach(GameObject fume in fumes)
         {
             // for each Fume in this scene, call its stun method
-            fume.GetComponent<stunEnemy>().SetStun();
+            fume.GetComponent<Patrol>().setStun(true);
+            //w
+
         }
     }
 }

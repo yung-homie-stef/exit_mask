@@ -8,11 +8,15 @@ public class Patrol : MonoBehaviour
     public Transform[] points;
     private int destinationPoint = 0;
     private NavMeshAgent agent;
-
+    private Animator _animator;
+    private bool isStun = false;
+    //int setS = 0;
+    //int unsetS = 0;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        _animator = gameObject.GetComponent<Animator>();
 
         // by disabling auto-braking, the moving object does not ease in/out of patrol points
         // instead, the movement stays consistent
@@ -38,7 +42,44 @@ public class Patrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        if (!agent.pathPending && agent.remainingDistance < 0.5f && isStun == false)
+        {
             GoToNextPoint();
-    }   
+
+        }
+        if(isStun)
+        {
+            checkForStun();
+        }
+    }
+
+
+    public void setStun(bool stunValue)
+    {
+        if(stunValue)
+        {
+            _animator.SetBool("is_stunned", true);
+
+            isStun = true;
+            agent.isStopped = true;
+
+        }
+        else if(!stunValue)
+        {
+            _animator.SetBool("is_stunned", false);
+
+            isStun = false;
+            agent.isStopped = false;
+
+        }
+    }
+
+    private void checkForStun()
+    {
+        if(_animator.GetCurrentAnimatorStateInfo(0).IsName("stunned") && _animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        {
+            setStun(false);
+        }
+    }
+
 }
