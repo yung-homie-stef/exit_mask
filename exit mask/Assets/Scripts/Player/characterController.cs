@@ -59,6 +59,19 @@ public class characterController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.tag == "Fume_Enemy")
+        {
+            // the player technically only collides with the enemies if they are not stunned
+            // otherwise they wont get damaged
+            if (collision.gameObject.GetComponent<Animator>().GetBool("is_stunned") == false)
+            {
+                Debug.Log("ouch");
+            }
+        }
+    }
 
     void StunEnemies()
     {
