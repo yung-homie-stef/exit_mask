@@ -1873,6 +1873,7 @@ GameObject:
   - component: {fileID: 1974595151172290715}
   - component: {fileID: 1974595151172290714}
   - component: {fileID: 1974595151172290712}
+  - component: {fileID: 2350559073012296558}
   - component: {fileID: 1974595153128064154}
   m_Layer: 0
   m_Name: player 2
@@ -1960,7 +1961,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jumpImpulse: 20
-  Palm: {fileID: 4154524498925186786}
+  fumes: []
+--- !u!114 &2350559073012296558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7513911566609384103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6db38fcb527cd841a79022f38c7b1b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRespawnPoint: {fileID: 0}
 --- !u!136 &1974595153128064154
 CapsuleCollider:
   m_ObjectHideFlags: 0

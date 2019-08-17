@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 72903013}
   m_Layer: 0
-  m_Name: Objectives
+  m_Name: objectives
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,7 +421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 231588760}
   m_Layer: 0
-  m_Name: Enemies
+  m_Name: enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,7 +623,7 @@ PrefabInstance:
     - target: {fileID: 6781751550170984628, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.27
+      value: 47.03
       objectReference: {fileID: 0}
     - target: {fileID: 6781751550170984628, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
@@ -739,6 +739,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.80466306
+      objectReference: {fileID: 0}
+    - target: {fileID: 2350559073012296558, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 2062505594}
+    - target: {fileID: 2350559073012296558, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: playerRespawnPoint
+      value: 
+      objectReference: {fileID: 1201557586}
+    - target: {fileID: 2350559073012296558, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: fadeAnimator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2350559073012296558, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: deathFadeAnimator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2350559073012296558, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: deathFader
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f10c9e3925541774ab6cbff3c6b21a28, type: 3}
@@ -3167,6 +3192,36 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: d5862c1a54b8bec438ca836470696aaa, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0aa2372b618cb04419bc29a8c963490c, type: 3}
+--- !u!1 &1201557585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201557586}
+  m_Layer: 0
+  m_Name: respawn_point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1201557586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201557585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 47.03, y: -73.498, z: -27.37288}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1270279299 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7513911566957615269, guid: f10c9e3925541774ab6cbff3c6b21a28,
@@ -5658,7 +5713,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: a4403156943f7e7458c6ec65962a6a4f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.911
+      value: -10.37
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a4403156943f7e7458c6ec65962a6a4f,
         type: 3}
@@ -5797,7 +5852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1852244478}
   m_Layer: 10
-  m_Name: Landmarks
+  m_Name: landmarks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5865,6 +5920,12 @@ Transform:
   m_Father: {fileID: 626337398}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &2062505594 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1974595153003425293, guid: f10c9e3925541774ab6cbff3c6b21a28,
+    type: 3}
+  m_PrefabInstance: {fileID: 269910242}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2079958828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7301411479557750229, guid: 0aa2372b618cb04419bc29a8c963490c,

@@ -68,7 +68,8 @@ public class characterController : MonoBehaviour
             // otherwise they wont get damaged
             if (collision.gameObject.GetComponent<Animator>().GetBool("is_stunned") == false)
             {
-                Debug.Log("ouch");
+                // die if you touch an enemy
+                gameObject.GetComponent<Death>().Kill();
             }
         }
     }
