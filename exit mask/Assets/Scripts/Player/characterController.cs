@@ -10,13 +10,17 @@ public class characterController : MonoBehaviour
 
     private Rigidbody rb;
     private Animator _animator;
+    private float stabTime;
+    private bool stabTimerStarted;
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         rb = gameObject.GetComponent<Rigidbody>();
         _animator = gameObject.GetComponent<Animator>();
-
+        stabTime = 0.9f;
+        stabTimerStarted = false;
        
     }
 
@@ -30,6 +34,19 @@ public class characterController : MonoBehaviour
 
         transform.Translate(strafe, 0, translation);
 
+        // this timer update check gives a 1 second delay between the start of the self-harm animation
+        // so that enemies are stunned right when the knife comes in contact with the player's wrist
+        if (stabTimerStarted == true)
+        {
+            stabTime -= Time.deltaTime;
+        }
+        if (stabTime < 0)
+        {
+            StunEnemies();   // stun enemies when the wrist is slit, along with reset the timer
+            stabTime = 0.9f;
+            stabTimerStarted = false;
+        }
+
         if (Input.GetKeyDown("escape"))
             Cursor.lockState = CursorLockMode.None;
 
@@ -39,7 +56,7 @@ public class characterController : MonoBehaviour
         // left click to attack
         if (Input.GetMouseButtonDown(0))
         {
-            _animator.SetBool("is_attacking", true);
+                _animator.SetBool("is_attacking", true);
         }
         else
         {
@@ -50,7 +67,7 @@ public class characterController : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             _animator.SetBool("is_attacking_self", true);
-            StunEnemies(); // causes enemies to be stunned
+            stabTimerStarted = true; 
         }
         else
         {
