@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Patrol : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public Transform[] points;
+    public GameObject selfHarmCanvas;
+
     private int destinationPoint = 0;
     private NavMeshAgent agent;
     private Animator _animator;
     private bool isStun = false;
-    //int setS = 0;
-    //int unsetS = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +71,7 @@ public class Patrol : MonoBehaviour
 
             isStun = false;
             agent.isStopped = false;
+            selfHarmCanvas.SetActive(false);
 
         }
     }

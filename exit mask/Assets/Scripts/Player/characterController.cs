@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class characterController : MonoBehaviour
 {
-    public float speed = 10.0f;
-    public float jumpImpulse = 20.0f;
-    public GameObject[] fumes; // array filled by looking for every enemy with proper tag
-
+    public float speed;
+    public float jumpImpulse;
+    public GameObject selfHarmCanvas; // tv static display when player cuts themselves
+    
+    private GameObject[] fumes; // array filled by looking for every enemy with proper tag
     private Rigidbody rb;
     private Animator _animator;
     private float stabTime;
@@ -17,11 +18,13 @@ public class characterController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
         rb = gameObject.GetComponent<Rigidbody>();
         _animator = gameObject.GetComponent<Animator>();
+
         stabTime = 0.9f;
         stabTimerStarted = false;
-       
+
     }
 
     // Update is called once per frame
@@ -45,6 +48,9 @@ public class characterController : MonoBehaviour
             StunEnemies();   // stun enemies when the wrist is slit, along with reset the timer
             stabTime = 0.9f;
             stabTimerStarted = false;
+
+            selfHarmCanvas.SetActive(true); // once the self harm stun on the enemies is finished, disable the canvas overlay
+
         }
 
         if (Input.GetKeyDown("escape"))
@@ -99,8 +105,8 @@ public class characterController : MonoBehaviour
         foreach(GameObject fume in fumes)
         {
             // for each Fume in this scene, call its stun method
-            fume.GetComponent<Patrol>().setStun(true);
-            //w
+            fume.GetComponent<Enemy>().setStun(true);
+            
 
         }
     }

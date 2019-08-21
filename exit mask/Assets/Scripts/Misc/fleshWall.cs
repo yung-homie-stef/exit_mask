@@ -17,8 +17,8 @@ public class fleshWall : MonoBehaviour
 
     public void RipFlesh()
     {
-        // _animator.SetBool("rip_flesh", true);
         _collider.enabled = false;
+        _animator.SetBool("is_cut", true);
     }
 
 }
