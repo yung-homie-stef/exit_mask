@@ -7,6 +7,8 @@ public class mazeExit : MonoBehaviour
     private static int pcCount;
     private Animator _animator;
 
+    public GameObject[] intrusiveSprites;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +30,11 @@ public class mazeExit : MonoBehaviour
     {
         // every time a computer is hacked reduce this number. signifies one objective being cleared
         pcCount--;
+        ActivateGIF(pcCount);
+    }
+
+    void ActivateGIF(int index)
+    {
+        intrusiveSprites[index].SetActive(true);
     }
 }

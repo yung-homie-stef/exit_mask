@@ -25,7 +25,7 @@ public class Computer : MonoBehaviour
     {
         if (hackingAllowed && Input.GetKeyDown(KeyCode.E))
           Hack();  // when the player is in the collision box and presses E they hack the computer
-          
+
     }
 
     private void OnTriggerEnter(Collider collision)
