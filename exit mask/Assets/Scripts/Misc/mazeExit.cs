@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class mazeExit : MonoBehaviour
 {
-    private static int pcCount;
+    public static int pcCount;
     private Animator _animator;
 
     public GameObject[] intrusiveSprites;
@@ -36,5 +36,10 @@ public class mazeExit : MonoBehaviour
     void ActivateGIF(int index)
     {
         intrusiveSprites[index].SetActive(true);
+    }
+
+    public int GetPCCount()
+    {
+        return pcCount;
     }
 }
