@@ -485,7 +485,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: NaN, z: 1e-45, w: 0}
+  m_BoundingSphereOverride: {x: 1e-45, y: 0, z: 1.68e-43, w: 0.08984375}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -515,6 +515,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -601,6 +602,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 95703b29f49b899499233ea7308bb800, type: 3}
   BlockCount: 358
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be2fc19f6b5447468069da073367512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 1
+  sensitivityDepth: 1
+  sensitivityNormals: 1
+  lumThreshold: 0.2
+  edgeExp: 1
+  sampleDist: 1
+  edgesOnly: 1
+  edgesOnlyBgColor: {r: 0, g: 0, b: 0, a: 1}
+  edgesColor: {r: 1, g: 1, b: 1, a: 1}
+  edgeDetectShader: {fileID: 4800000, guid: 4bb66803efb5a384ca872fef88c3c4d5, type: 3}
+  edgeDetectMaterial: {fileID: 0}
 --- !u!224 &998650364 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6995716926277567498, guid: 4d44cde455b3787439801f8df6e12cb3,
@@ -1052,6 +1076,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bird_cage
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: bc44a9a2757accb4e85e5bffdd7df52a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 575c7a394e6a52a48b499f0d33c3e422, type: 2}
     - target: {fileID: -4216859302048453862, guid: bc44a9a2757accb4e85e5bffdd7df52a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1122,11 +1151,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.0759
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: bc44a9a2757accb4e85e5bffdd7df52a,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 575c7a394e6a52a48b499f0d33c3e422, type: 2}
     m_RemovedComponents:
     - {fileID: -6057140222963153312, guid: bc44a9a2757accb4e85e5bffdd7df52a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bc44a9a2757accb4e85e5bffdd7df52a, type: 3}
@@ -1157,7 +1181,7 @@ PrefabInstance:
     - target: {fileID: 6995716926277567501, guid: 4d44cde455b3787439801f8df6e12cb3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6995716926277567498, guid: 4d44cde455b3787439801f8df6e12cb3,
         type: 3}

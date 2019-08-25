@@ -87,7 +87,7 @@ public class characterController : MonoBehaviour
         
         if (collision.gameObject.tag == "Fume_Enemy")
         {
-            // the player technically only collides with the enemies if they are not stunned
+            // the player technically only collides with fume enemies if they are not stunned
             // otherwise they wont get damaged
             if (collision.gameObject.GetComponent<Animator>().GetBool("is_stunned") == false)
             {
@@ -95,6 +95,14 @@ public class characterController : MonoBehaviour
                 gameObject.GetComponent<Death>().Kill();
             }
         }
+
+        if (collision.gameObject.tag == "Pendra_Enemy")
+        {
+            // otherwise if the player collides with a centipede just kill them instantly
+            // as they do not have any stun status to check for
+            gameObject.GetComponent<Death>().Kill();
+        }
+        
     }
 
     void StunEnemies()

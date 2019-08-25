@@ -1295,9 +1295,10 @@ GameObject:
   - component: {fileID: 9118512279261823074}
   - component: {fileID: 6159729757699856164}
   - component: {fileID: 6159729757699856167}
+  - component: {fileID: 4703804812954898468}
   m_Layer: 0
-  m_Name: pendra_test
-  m_TagString: Untagged
+  m_Name: pendra_prefab
+  m_TagString: Pendra_Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1396,7 +1397,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 9
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1408,6 +1409,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &4703804812954898468
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2763570259896180491}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 8.574242}
+  m_Center: {x: 1.1201858e-15, y: 0, z: 1.0788258}
 --- !u!1 &2794064430954254490
 GameObject:
   m_ObjectHideFlags: 0
