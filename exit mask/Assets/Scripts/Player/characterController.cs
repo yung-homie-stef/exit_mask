@@ -105,7 +105,7 @@ public class characterController : MonoBehaviour
         foreach(GameObject fume in fumes)
         {
             // for each Fume in this scene, call its stun method
-            fume.GetComponent<Enemy>().setStun(true);
+            fume.GetComponent<Fume>().setStun(true);
             
 
         }
