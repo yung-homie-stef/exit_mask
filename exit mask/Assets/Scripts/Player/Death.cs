@@ -38,6 +38,9 @@ public class Death : MonoBehaviour
         // when the player walks through a new respawn point, call a function that changes the current respawn point to this one instead
         if (other.tag == "Respawn_Point")
         {
+            BoxCollider boxcol = other.GetComponent<BoxCollider>();
+            boxcol.enabled = false; // disable the trigger so that this respawn point can never be reactivated
+
             Transform newRespawnTransform = other.transform;
             UpdatePlayerRespawnPoint(newRespawnTransform);
         }
