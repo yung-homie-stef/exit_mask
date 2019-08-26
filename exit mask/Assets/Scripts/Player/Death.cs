@@ -33,18 +33,29 @@ public class Death : MonoBehaviour
             PlayerRespawn();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        // when the player walks through a new respawn point, call a function that changes the current respawn point to this one instead
+        if (other.tag == "Respawn_Point")
+        {
+            Transform newRespawnTransform = other.transform;
+            UpdatePlayerRespawnPoint(newRespawnTransform);
+        }
+            
+    }
+
     public void Kill()
     {
         // play animation of player falling over
         // restrict them from moving themselves or camera
         _animator.SetBool("is_dead", true);
         _fadeAnimator.SetBool("has_died", true);
+
         gameObject.GetComponent<characterController>().enabled = false;
         playerCamera.GetComponent<camMouseLook>().enabled = false;
         deathTimerStarted = true; // start death timer, making the player respawn after it has reached 0
-        
-   
     }
+
 
     public void PlayerRespawn()
     {
@@ -52,12 +63,16 @@ public class Death : MonoBehaviour
         // respawn them at the start of the level, enable controls again, and reset the death timer
         _animator.SetBool("is_dead", false);
         _fadeAnimator.SetBool("has_died", false);
+
         gameObject.GetComponent<characterController>().enabled = true;
         playerCamera.GetComponent<camMouseLook>().enabled = true;
         gameObject.transform.position = playerRespawnPoint.position;
         deathTime = 3.0f;
         deathTimerStarted = false;
+    }
 
-
+    private void UpdatePlayerRespawnPoint(Transform tf)
+    {
+        playerRespawnPoint.position = tf.position;
     }
 }
