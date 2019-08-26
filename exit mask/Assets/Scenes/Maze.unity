@@ -1394,46 +1394,21 @@ PrefabInstance:
       propertyPath: m_Drag
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1974595153003425293, guid: f10c9e3925541774ab6cbff3c6b21a28,
+    - target: {fileID: 1974595151172290712, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
-      propertyPath: far clip plane
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974595153128064154, guid: f10c9e3925541774ab6cbff3c6b21a28,
+      propertyPath: selfHarmCanvas
+      value: 
+      objectReference: {fileID: 1649970683}
+    - target: {fileID: 1974595151172290712, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
-      propertyPath: m_Radius
-      value: 0.3460452
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974595153128064154, guid: f10c9e3925541774ab6cbff3c6b21a28,
-        type: 3}
-      propertyPath: m_Center.x
-      value: 0.00069453433
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974595153128064154, guid: f10c9e3925541774ab6cbff3c6b21a28,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.5794301
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974595153128064154, guid: f10c9e3925541774ab6cbff3c6b21a28,
-        type: 3}
-      propertyPath: m_Center.z
-      value: 0.00065915723
+      propertyPath: speed
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3501439700402560462, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e63ea740531aae84986ab4ce8b9c4a88, type: 2}
-    - target: {fileID: 8468981743485285726, guid: f10c9e3925541774ab6cbff3c6b21a28,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.0040412224
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468981743485285726, guid: f10c9e3925541774ab6cbff3c6b21a28,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.80466306
-      objectReference: {fileID: 0}
     - target: {fileID: 2350559073012296558, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
       propertyPath: playerCamera
@@ -1459,15 +1434,40 @@ PrefabInstance:
       propertyPath: deathFader
       value: 
       objectReference: {fileID: 564342247}
-    - target: {fileID: 1974595151172290712, guid: f10c9e3925541774ab6cbff3c6b21a28,
+    - target: {fileID: 1974595153128064154, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
-      propertyPath: selfHarmCanvas
-      value: 
-      objectReference: {fileID: 1649970683}
-    - target: {fileID: 1974595151172290712, guid: f10c9e3925541774ab6cbff3c6b21a28,
+      propertyPath: m_Radius
+      value: 0.3460452
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974595153128064154, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
-      propertyPath: speed
-      value: 7
+      propertyPath: m_Center.x
+      value: 0.00069453433
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974595153128064154, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.5794301
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974595153128064154, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.00065915723
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974595153003425293, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: far clip plane
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468981743485285726, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0040412224
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468981743485285726, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.80466306
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f10c9e3925541774ab6cbff3c6b21a28, type: 3}
@@ -8239,7 +8239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1879280682
 RectTransform:
   m_ObjectHideFlags: 0
