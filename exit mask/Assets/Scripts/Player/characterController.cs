@@ -50,7 +50,7 @@ public class characterController : MonoBehaviour
             stabTimerStarted = false;
 
             selfHarmCanvas.SetActive(true); // once the self harm stun on the enemies is finished, disable the canvas overlay
-            // FindObjectOfType<AudioManager>().Play("SelfHarmDistortion");
+            //FindObjectOfType<audioManager>().Play("TV Static");
         }
 
         if (Input.GetKeyDown("escape"))
@@ -72,8 +72,8 @@ public class characterController : MonoBehaviour
         // right click to self-harm
         if (Input.GetMouseButtonDown(1))
         {
-            _animator.SetBool("is_attacking_self", true);
-            stabTimerStarted = true; 
+                _animator.SetBool("is_attacking_self", true);
+                stabTimerStarted = true;
         }
         else
         {
