@@ -22,7 +22,10 @@ public class characterController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         _animator = gameObject.GetComponent<Animator>();
 
-        stabTime = 0.9f;
+        _animator.SetBool("can_attack_self", true);
+
+
+       stabTime = 0.9f;
         stabTimerStarted = false;
 
     }
@@ -42,15 +45,19 @@ public class characterController : MonoBehaviour
         if (stabTimerStarted == true)
         {
             stabTime -= Time.deltaTime;
+            _animator.SetBool("can_attack_self", false);
         }
+
         if (stabTime < 0)
         {
             StunEnemies();   // stun enemies when the wrist is slit, along with reset the timer
             stabTime = 0.9f;
             stabTimerStarted = false;
 
+            _animator.SetBool("is_attacking_self", false);
+
             selfHarmCanvas.SetActive(true); // once the self harm stun on the enemies is finished, disable the canvas overlay
-            //FindObjectOfType<audioManager>().Play("TV Static");
+            
         }
 
         if (Input.GetKeyDown("escape"))
@@ -72,14 +79,13 @@ public class characterController : MonoBehaviour
         // right click to self-harm
         if (Input.GetMouseButtonDown(1))
         {
+            if (_animator.GetBool("can_attack_self") == true)
+            {
                 _animator.SetBool("is_attacking_self", true);
                 stabTimerStarted = true;
+            }
         }
-        else
-        {
-            _animator.SetBool("is_attacking_self", false);
-            
-        }
+ 
     }
 
     private void OnCollisionEnter(Collision collision)

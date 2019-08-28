@@ -36,7 +36,7 @@ public class audioManager : MonoBehaviour
     {
         // for any continuous sounds (music), just call the play method in start
         // and play it from there
-        // Play("Theme");
+         Play("Theme");
     }
 
     public void Play(string name)

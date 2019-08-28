@@ -7,6 +7,7 @@ public class Fume : MonoBehaviour
 {
     public Transform[] points;
     public GameObject selfHarmCanvas;
+    public GameObject player;
 
     private int destinationPoint = 0;
     private NavMeshAgent _agent;
@@ -72,6 +73,7 @@ public class Fume : MonoBehaviour
             isStun = false;
             _agent.isStopped = false;
             selfHarmCanvas.SetActive(false);
+            player.GetComponent<Animator>().SetBool("can_attack_self", true);
 
         }
     }

@@ -66,7 +66,7 @@ public class intrusiveImageDeactivator : MonoBehaviour
             timersAreSet = true;
             imageActiveTimer = GenerateRandomTimer(3,6);
             imageDisabledTimer = GenerateRandomTimer(minDisable, maxDisable);
-            //transform.GetChild(0).gameObject.transform.position = GenerateRandomCanvasPos(200, 1000, 100, 650); // generate a random position
+           // transform.GetChild(0).gameObject.transform.position = GenerateRandomCanvasPos(200, 1000, 100, 650); // generate a random position
 
             activeTimerSet = true;
         }

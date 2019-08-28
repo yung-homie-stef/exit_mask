@@ -11,6 +11,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: is_attacking_self
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: can_attack_self
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5681662633586623342}
   m_Solo: 0
@@ -145,6 +148,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: is_attacking_self
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: can_attack_self
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5705541423967028354}
   m_Solo: 0
@@ -193,6 +199,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: is_dead
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: can_attack_self
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
