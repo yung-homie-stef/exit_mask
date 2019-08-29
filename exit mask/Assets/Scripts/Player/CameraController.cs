@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class camMouseLook : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     Vector2 mouseLook;
     Vector2 smoothV;
@@ -30,4 +30,5 @@ public class camMouseLook : MonoBehaviour
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
         character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, character.transform.up);
     }
+
 }

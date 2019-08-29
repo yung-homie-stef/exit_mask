@@ -10,11 +10,14 @@ ModelImporter:
       74: 1900584633648681956
     second: stab
   - first:
-      74: 2911620345032247981
+      74: -998496362607748373
     second: self-stab
   - first:
-      74: -8684163890506659509
+      74: -5482341369240257797
     second: hack
+  - first:
+      74: -5455075036266976943
+    second: die
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -104,7 +107,7 @@ ModelImporter:
     - serializedVersion: 16
       name: self-stab
       takeName: Take 001
-      internalID: 2911620345032247981
+      internalID: -998496362607748373
       firstFrame: 190
       lastFrame: 270
       wrapMode: 0
@@ -133,9 +136,38 @@ ModelImporter:
     - serializedVersion: 16
       name: hack
       takeName: Take 001
-      internalID: -8684163890506659509
+      internalID: -5482341369240257797
       firstFrame: 300
       lastFrame: 370
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: die
+      takeName: Take 001
+      internalID: -5455075036266976943
+      firstFrame: 400
+      lastFrame: 460
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

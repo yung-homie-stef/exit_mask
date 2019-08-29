@@ -55,7 +55,8 @@ public class Death : MonoBehaviour
         _fadeAnimator.SetBool("has_died", true);
 
         gameObject.GetComponent<characterController>().enabled = false;
-        playerCamera.GetComponent<camMouseLook>().enabled = false;
+        playerCamera.GetComponent<CameraController>().enabled = false;
+
         deathTimerStarted = true; // start death timer, making the player respawn after it has reached 0
     }
 
@@ -68,8 +69,10 @@ public class Death : MonoBehaviour
         _fadeAnimator.SetBool("has_died", false);
 
         gameObject.GetComponent<characterController>().enabled = true;
-        playerCamera.GetComponent<camMouseLook>().enabled = true;
+        playerCamera.GetComponent<CameraController>().enabled = true;
         gameObject.transform.position = playerRespawnPoint.position;
+     
+
         deathTime = 3.0f;
         deathTimerStarted = false;
     }

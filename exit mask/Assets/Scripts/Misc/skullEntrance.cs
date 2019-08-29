@@ -21,7 +21,7 @@ public class skullEntrance : MonoBehaviour
         if (other.tag == "Player")
         {
             _animator.SetBool("is_triggered", true);
-            doorCoroutine = ActivateDoor(3.8f);
+            doorCoroutine = ActivateDoor(3.9f);
             StartCoroutine(doorCoroutine);
         }
     }
