@@ -8,6 +8,7 @@ public class Fume : MonoBehaviour
     public Transform[] points;
     public GameObject selfHarmCanvas;
     public GameObject player;
+    public GameObject intrusiveImageCanvas;
 
     private int destinationPoint = 0;
     private NavMeshAgent _agent;
@@ -64,6 +65,8 @@ public class Fume : MonoBehaviour
 
             isStun = true;
             _agent.isStopped = true;
+            intrusiveImageCanvas.SetActive(false);
+            gameObject.GetComponent<AudioSource>().enabled = false;
 
         }
         else if(!stunValue)
@@ -74,6 +77,8 @@ public class Fume : MonoBehaviour
             _agent.isStopped = false;
             selfHarmCanvas.SetActive(false);
             player.GetComponent<Animator>().SetBool("can_attack_self", true);
+            intrusiveImageCanvas.SetActive(true);
+            gameObject.GetComponent<AudioSource>().enabled = true;
 
         }
     }
