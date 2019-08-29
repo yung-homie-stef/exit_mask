@@ -56,6 +56,8 @@ public class characterController : MonoBehaviour
 
             _animator.SetBool("is_attacking_self", false);
 
+            FindObjectOfType<audioManager>().Play("Self_Harm_Static");
+
             selfHarmCanvas.SetActive(true); // once the self harm stun on the enemies is finished, disable the canvas overlay
             
         }
