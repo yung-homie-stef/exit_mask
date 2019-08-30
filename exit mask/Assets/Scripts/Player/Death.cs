@@ -69,9 +69,9 @@ public class Death : MonoBehaviour
         _fadeAnimator.SetBool("has_died", false);
 
         gameObject.GetComponent<characterController>().enabled = true;
-        playerCamera.GetComponent<CameraController>().enabled = true;
         gameObject.transform.position = playerRespawnPoint.position;
-     
+        gameObject.transform.rotation = playerRespawnPoint.rotation;
+        playerCamera.GetComponent<CameraController>().enabled = true;
 
         deathTime = 3.0f;
         deathTimerStarted = false;
