@@ -16,7 +16,7 @@ public class DoorOpening : MonoBehaviour
     // Update is called once per frame
     void Update()  // only when the player is in the door collider and pressing 'E' can the door open
     {
-        if (openAllowed && Input.GetKeyDown(KeyCode.E))
+        if (openAllowed && Input.GetKeyDown(KeyCode.E) && _animator.GetBool("open_door") == false)
             OpenDoor();
     }
     
@@ -39,6 +39,7 @@ public class DoorOpening : MonoBehaviour
     private void OpenDoor()
     {
         _animator.SetBool("open_door", true); // play the door opening animation
+        FindObjectOfType<audioManager>().Play("Door_Opening");
     }
 
 

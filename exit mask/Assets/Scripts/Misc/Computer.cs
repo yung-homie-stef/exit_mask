@@ -11,6 +11,7 @@ public class Computer : MonoBehaviour
 
     public GameObject Player;
     public GameObject Exit;
+    public GameObject terminalScreens;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +25,11 @@ public class Computer : MonoBehaviour
     void Update()
     {
         if (hackingAllowed && Input.GetKeyDown(KeyCode.E))
-          Hack();  // when the player is in the collision box and presses E they hack the computer
+        {
+            Hack();
+             // when the player is in the collision box and presses E they hack the computer
 
+        }
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -61,7 +65,9 @@ public class Computer : MonoBehaviour
         yield return new WaitForSeconds(waitTime); // wait for the alotted time, set the hack flag to false and disable this script
         _animator.SetBool("can_hack", false);
         Exit.GetComponent<mazeExit>().DecrementPCCount();
-        
-        this.enabled = false;
+        terminalScreens.SetActive(true);
+        FindObjectOfType<audioManager>().Play("Computer_Boot_Up");
+
+        enabled = false;
     }
 }
