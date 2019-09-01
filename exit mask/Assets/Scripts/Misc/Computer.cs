@@ -49,6 +49,8 @@ public class Computer : MonoBehaviour
     void Hack()
     {
         _animator.SetBool("can_hack", true);
+        FindObjectOfType<audioManager>().Play("Typing");
+
          // this ensures that the player cannot hack the same computer 5 times and exit the maze very easily.
          if (_collider.enabled == true)
         {
