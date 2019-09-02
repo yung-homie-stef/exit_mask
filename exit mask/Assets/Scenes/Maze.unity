@@ -2274,11 +2274,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'player '
       objectReference: {fileID: 0}
-    - target: {fileID: 1974595153003425293, guid: f10c9e3925541774ab6cbff3c6b21a28,
-        type: 3}
-      propertyPath: far clip plane
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 7513911566957615269, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
       propertyPath: m_IsActive
@@ -2409,6 +2404,11 @@ PrefabInstance:
       propertyPath: deathFader
       value: 
       objectReference: {fileID: 564342247}
+    - target: {fileID: 2350559073012296558, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: killVolume
+      value: -85
+      objectReference: {fileID: 0}
     - target: {fileID: 1974595153128064154, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
       propertyPath: m_Radius
@@ -2428,6 +2428,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: 0.00065915723
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974595153003425293, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: far clip plane
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8468981743485285726, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}

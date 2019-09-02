@@ -87,7 +87,13 @@ public class characterController : MonoBehaviour
                 stabTimerStarted = true;
             }
         }
- 
+
+        if (gameObject.transform.position.y < gameObject.GetComponent<Death>().killVolume)
+        {
+            gameObject.GetComponent<Death>().Kill();
+        }
+
+
     }
 
     private void OnCollisionEnter(Collision collision)

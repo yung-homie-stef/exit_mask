@@ -12,6 +12,7 @@ public class Death : MonoBehaviour
     public Transform playerRespawnPoint;
     public Camera playerCamera;
     public GameObject deathFader;
+    public float killVolume;
 
     // Start is called before the first frame update
     void Start()

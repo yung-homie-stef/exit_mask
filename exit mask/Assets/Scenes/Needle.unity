@@ -383,7 +383,8 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: -6.3384464e+29, y: 1.7592186e+13, z: -1.7014118e+38,
+    w: 2.5243547e-29}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -613,11 +614,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'player '
       objectReference: {fileID: 0}
-    - target: {fileID: 1974595153003425293, guid: f10c9e3925541774ab6cbff3c6b21a28,
-        type: 3}
-      propertyPath: far clip plane
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 7513911566957615269, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
       propertyPath: m_IsActive
@@ -753,6 +749,11 @@ PrefabInstance:
       propertyPath: deathFader
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2350559073012296558, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1974595153128064154, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
       propertyPath: m_Radius
@@ -772,6 +773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: 0.00065915723
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974595153003425293, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: far clip plane
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8468981743485285726, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
