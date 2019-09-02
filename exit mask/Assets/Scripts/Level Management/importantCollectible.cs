@@ -3,28 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Needle : MonoBehaviour
+public class importantCollectible : MonoBehaviour
 {
     private bool pickUpAllowed = false;
+    private bool transitionStarted = false;
+    private float transitionTimer = 6.0f;
     private Animator _animator;
-    private IEnumerator transitionCoroutine;
-    public string scenename;
+    private Renderer _renderer;
 
     public GameObject levelFader;
+    public int index;
 
     // Start is called before the first frame update
     void Start()
     {
         _animator = levelFader.GetComponent<Animator>();
+        _renderer = GetComponent<Renderer>();
     }
-
+    
     private void Update()
     {
+        Debug.Log(transitionTimer);
+
         if (pickUpAllowed == true && Input.GetKeyDown(KeyCode.E))
+            transitionStarted = true;
+
+
+        if (transitionStarted == true)
         {
-            Destroy(gameObject);
+            transitionTimer -= Time.deltaTime;
             _animator.SetBool("level_completed", true);
+            _renderer.enabled = false;
         }
+
+        if (transitionTimer <= 0)
+            LoadSpecifiedLevel();
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,11 +53,8 @@ public class Needle : MonoBehaviour
             pickUpAllowed = false;
     }
 
-    private IEnumerator loadLevel(float waitTime)
+    void LoadSpecifiedLevel()
     {
-        Debug.Log("loading");
-        yield return new WaitForSeconds(waitTime);
-        SceneManager.LoadScene(scenename);
-
+        SceneManager.LoadScene(index);
     }
 }
