@@ -34,7 +34,7 @@ public class intrusiveImageDeactivator : MonoBehaviour
     {
 
         // switch statement
-        // the more computers the player activates, the smaller the disable gif window is 
+        // the more computers the player activates, the smaller the disabled gif window is 
         switch (pcCount)
         {
             case 4:
@@ -66,7 +66,7 @@ public class intrusiveImageDeactivator : MonoBehaviour
             timersAreSet = true;
             imageActiveTimer = GenerateRandomTimer(3,6);
             imageDisabledTimer = GenerateRandomTimer(minDisable, maxDisable);
-           // transform.GetChild(0).gameObject.transform.position = GenerateRandomCanvasPos(200, 1000, 100, 650); // generate a random position
+            transform.GetChild(0).gameObject.transform.position = GenerateRandomCanvasPos(100, 950, 100, 650); // generate a random position
 
             activeTimerSet = true;
         }
