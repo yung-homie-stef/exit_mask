@@ -13,6 +13,7 @@ public class importantCollectible : MonoBehaviour
 
     public GameObject levelFader;
     public int index;
+    public Animator textAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +27,15 @@ public class importantCollectible : MonoBehaviour
         Debug.Log(transitionTimer);
 
         if (pickUpAllowed == true && Input.GetKeyDown(KeyCode.E))
+        {
             transitionStarted = true;
+            
+        }
 
 
         if (transitionStarted == true)
         {
+            textAnimator.SetBool("picked_up", true);
             transitionTimer -= Time.deltaTime;
             _animator.SetBool("level_completed", true);
             _renderer.enabled = false;
