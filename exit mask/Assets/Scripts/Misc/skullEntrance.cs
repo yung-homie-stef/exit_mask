@@ -7,6 +7,7 @@ public class skullEntrance : MonoBehaviour
     public GameObject entranceSkull;
     public GameObject mazeDoor;
     private IEnumerator doorCoroutine;
+    private IEnumerator soundCoroutine;
 
     private Animator _animator;
 
@@ -21,8 +22,13 @@ public class skullEntrance : MonoBehaviour
         if (other.tag == "Player")
         {
             _animator.SetBool("is_triggered", true);
+
             doorCoroutine = ActivateDoor(3.9f);
             StartCoroutine(doorCoroutine);
+
+            soundCoroutine = ActivateSound(1.5f);
+            StartCoroutine(soundCoroutine);
+           
         }
     }
 
@@ -30,5 +36,12 @@ public class skullEntrance : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         mazeDoor.SetActive(true);
+    }
+
+    private IEnumerator ActivateSound(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        FindObjectOfType<audioManager>().Play("Skull_Drone");
+        this.enabled = false;
     }
 }

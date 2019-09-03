@@ -39,6 +39,7 @@ public class importantCollectible : MonoBehaviour
             transitionTimer -= Time.deltaTime;
             _animator.SetBool("level_completed", true);
             _renderer.enabled = false;
+            FindObjectOfType<audioManager>().Play("Pickup");
         }
 
         if (transitionTimer <= 0)
