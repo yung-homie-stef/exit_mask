@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class BoxCutter : MonoBehaviour
@@ -52,6 +53,7 @@ public class BoxCutter : MonoBehaviour
         equippableBoxCutter.SetActive(true);
         _inventory.SetBoxCutterStatus(true);
         FindObjectOfType<audioManager>().Play("Pickup");
+
     }
 
 }
