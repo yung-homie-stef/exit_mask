@@ -27,7 +27,7 @@ public class Instructions : MonoBehaviour
 
     public void ChangeText(string txt)
     {
-        levelText.text = currentInstructionText;
+        levelText.text = txt;
         _animator.SetBool("has_changed", true);
         StartCoroutine(disableCoroutine);
         gameObject.GetComponent<BoxCollider>().enabled = false;
