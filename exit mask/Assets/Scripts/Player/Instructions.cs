@@ -9,10 +9,12 @@ public class Instructions : MonoBehaviour
     public string currentInstructionText;
 
     private Animator _animator;
+    private IEnumerator disableCoroutine;
 
     private void Start()
     {
         _animator = levelText.GetComponent<Animator>();
+        disableCoroutine = DisableTextTemporarily(6.0f);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,7 +29,15 @@ public class Instructions : MonoBehaviour
     {
         levelText.text = currentInstructionText;
         _animator.SetBool("has_changed", true);
+        StartCoroutine(disableCoroutine);
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+    }
 
+    private IEnumerator DisableTextTemporarily(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        _animator.SetBool("has_changed", false);
+        Destroy(gameObject);
     }
 
 }
