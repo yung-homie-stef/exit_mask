@@ -360,7 +360,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7, y: -329}
+  m_AnchoredPosition: {x: 23, y: -329}
   m_SizeDelta: {x: -100, y: -373}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &873509289
@@ -999,11 +999,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'player '
       objectReference: {fileID: 0}
-    - target: {fileID: 1974595153003425293, guid: f10c9e3925541774ab6cbff3c6b21a28,
-        type: 3}
-      propertyPath: far clip plane
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 7513911566957615269, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
       propertyPath: m_IsActive
@@ -1138,6 +1133,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974595153003425293, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: far clip plane
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3501439700402560462, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
