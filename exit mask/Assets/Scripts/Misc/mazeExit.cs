@@ -9,6 +9,7 @@ public class mazeExit : MonoBehaviour
     private Animator _animator;
 
     public GameObject[] intrusiveSprites;
+    public GameObject exitTipTrigger;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class mazeExit : MonoBehaviour
         if (pcCount == 0)
         {
             // TODO: swap this destroy call out with setting a bool flag to open the exit door. 
+            exitTipTrigger.SetActive(true);
             Destroy(gameObject);
         }
     }

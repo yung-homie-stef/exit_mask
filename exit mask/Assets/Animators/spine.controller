@@ -9,9 +9,9 @@ AnimatorController:
   m_Name: spine
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: spine_offset
+  - m_Name: offset
     m_Type: 1
-    m_DefaultFloat: 2
+    m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
@@ -36,7 +36,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: spine
-  m_Speed: 1
+  m_Speed: 0.75
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -52,7 +52,7 @@ AnimatorState:
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
-  m_CycleOffsetParameter: spine_offset
+  m_CycleOffsetParameter: offset
   m_TimeParameter: 
 --- !u!1107 &7297175609824919600
 AnimatorStateMachine:
