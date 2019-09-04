@@ -26,11 +26,9 @@ public class BoxCutter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pickUpAllowed && Input.GetKeyDown(KeyCode.E))
-        {                                       // when the player is in the collision box and presses E pick up box cutter
+        if (pickUpAllowed && Input.GetKeyDown(KeyCode.E))   // when the player is in the collision box and presses E pick up box cutter
             PickUp();
-            cutterTextTrigger.SetActive(true);
-        }
+
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -57,8 +55,10 @@ public class BoxCutter : MonoBehaviour
         equippableBoxCutter.SetActive(true);
         _inventory.SetBoxCutterStatus(true);
         FindObjectOfType<audioManager>().Play("Pickup");
-        
-        
+        cutterTextTrigger.SetActive(true);
+
+
+
 
     }
 
