@@ -14,6 +14,7 @@ public class BoxCutter : MonoBehaviour
     public GameObject Player;
     public Animator textAnimator;
     public GameObject cutterTextTrigger;
+    public GameObject[] screens;
 
     // Start is called before the first frame update
     void Start()
@@ -50,14 +51,18 @@ public class BoxCutter : MonoBehaviour
 
     void PickUp()
     {
+
+        for (int i=0; i < screens.Length; i++)
+        {
+            screens[i].SetActive(true);
+        }
+
         textAnimator.SetBool("picked_up", true);
         Destroy(gameObject);
         equippableBoxCutter.SetActive(true);
         _inventory.SetBoxCutterStatus(true);
         FindObjectOfType<audioManager>().Play("Pickup");
         cutterTextTrigger.SetActive(true);
-
-
 
 
     }
