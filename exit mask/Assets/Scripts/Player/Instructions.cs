@@ -14,7 +14,7 @@ public class Instructions : MonoBehaviour
     private void Start()
     {
         _animator = levelText.GetComponent<Animator>();
-        disableCoroutine = DisableTextTemporarily(6.0f);
+        disableCoroutine = DisableTextTemporarily(12.0f);
     }
 
     private void OnTriggerEnter(Collider other)
