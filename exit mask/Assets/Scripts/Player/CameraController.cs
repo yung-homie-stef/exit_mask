@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     Vector2 smoothV;
     public float sensitivity = 5.0f;
     public float smoothing = 2.0f;
+    public bool is_dead;
 
     GameObject character;
     public GameObject ObjectToFollow;
@@ -16,6 +17,8 @@ public class CameraController : MonoBehaviour
     public float minHeadRotation = -80.0f;
     
     public float currentHeadRotation = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,10 +43,11 @@ public class CameraController : MonoBehaviour
         smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f / smoothing);
         smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smoothing);
 
+        if (is_dead == false)
+        {
+            mouseLook += smoothV; // the player cannot look around when they are dying. quickly gets flagged back to false when you respawn.
+        }
 
-
-        //jimmy neutron style 
-        mouseLook += smoothV;
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
 
         // how much you rotate -- what you rotate

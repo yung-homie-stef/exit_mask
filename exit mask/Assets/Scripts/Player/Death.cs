@@ -57,7 +57,7 @@ public class Death : MonoBehaviour
         FindObjectOfType<audioManager>().Play("Death");
 
         gameObject.GetComponent<characterController>().enabled = false;
-        playerCamera.GetComponent<CameraController>().enabled = false;
+        playerCamera.GetComponent<CameraController>().is_dead = true;
 
         deathTimerStarted = true; // start death timer, making the player respawn after it has reached 0
     }
@@ -73,7 +73,8 @@ public class Death : MonoBehaviour
         gameObject.GetComponent<characterController>().enabled = true;
         gameObject.transform.position = playerRespawnPoint.position;
         gameObject.transform.rotation = playerRespawnPoint.rotation;
-        playerCamera.GetComponent<CameraController>().enabled = true;
+
+        playerCamera.GetComponent<CameraController>().is_dead = false;
 
         deathTime = 3.0f;
         deathTimerStarted = false;
