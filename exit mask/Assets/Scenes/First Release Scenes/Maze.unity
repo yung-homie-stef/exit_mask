@@ -17626,6 +17626,11 @@ PrefabInstance:
       propertyPath: selfHarmCanvas
       value: 
       objectReference: {fileID: 1649970683}
+    - target: {fileID: 1159800118297428827, guid: 1a546eec564a1cd438f38cfef12cf948,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3161956580757233837, guid: 1a546eec564a1cd438f38cfef12cf948,
         type: 3}
       propertyPath: playerRespawnPoint
@@ -17650,6 +17655,21 @@ PrefabInstance:
         type: 3}
       propertyPath: sensitivityDepth
       value: 2.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159800118297428824, guid: 1a546eec564a1cd438f38cfef12cf948,
+        type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159800118297428824, guid: 1a546eec564a1cd438f38cfef12cf948,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159800118297428824, guid: 1a546eec564a1cd438f38cfef12cf948,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a546eec564a1cd438f38cfef12cf948, type: 3}

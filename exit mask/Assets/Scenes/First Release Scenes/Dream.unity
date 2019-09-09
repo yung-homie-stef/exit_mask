@@ -974,11 +974,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: instructions_canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5923723550202557856, guid: 8be2449e354f8fe448718f74d102443a,
-        type: 3}
-      propertyPath: m_Text
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5923723550316416349, guid: 8be2449e354f8fe448718f74d102443a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1084,6 +1079,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5923723550202557856, guid: 8be2449e354f8fe448718f74d102443a,
+        type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8be2449e354f8fe448718f74d102443a, type: 3}
 --- !u!1001 &467660727
@@ -1176,12 +1176,17 @@ PrefabInstance:
     - target: {fileID: 1974595151172290715, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
       propertyPath: m_Drag
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974595151172290715, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: m_Mass
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1974595151172290712, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
       propertyPath: speed
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2350559073012296558, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
