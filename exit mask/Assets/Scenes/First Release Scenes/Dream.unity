@@ -974,6 +974,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: instructions_canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5923723550202557856, guid: 8be2449e354f8fe448718f74d102443a,
+        type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5923723550316416349, guid: 8be2449e354f8fe448718f74d102443a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1078,11 +1083,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5923723550202557856, guid: 8be2449e354f8fe448718f74d102443a,
-        type: 3}
-      propertyPath: m_Text
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8be2449e354f8fe448718f74d102443a, type: 3}
@@ -3720,7 +3720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1756956859
 MonoBehaviour:
   m_ObjectHideFlags: 0

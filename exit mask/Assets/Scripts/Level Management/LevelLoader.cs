@@ -17,7 +17,7 @@ public class LevelLoader : MonoBehaviour
     {
         _animator = image.GetComponent<Animator>();
         levelTimerSet = false;
-        levelTimer = 3.0f;
+        levelTimer = 6.0f;
         
     }
 

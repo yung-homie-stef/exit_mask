@@ -19,7 +19,7 @@ public class Chapter : MonoBehaviour
 
     private void Update()
     {
-        loadCoroutine = loadNextLevel(7.0f);
+        loadCoroutine = loadNextLevel(10.0f);
         fadeCoroutine = fadeChapterScreen(4.0f);
         StartCoroutine(fadeCoroutine);
         StartCoroutine(loadCoroutine);

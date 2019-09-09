@@ -22,10 +22,9 @@ public class mazeExit : MonoBehaviour
     void Update()
     {
         if (pcCount == 0)
-        {
-            // TODO: swap this destroy call out with setting a bool flag to open the exit door. 
+        { 
             exitTipTrigger.SetActive(true);
-            Destroy(gameObject);
+            _animator.SetBool("can_exit", true);
         }
     }
 

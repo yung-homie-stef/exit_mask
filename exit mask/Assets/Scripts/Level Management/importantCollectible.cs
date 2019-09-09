@@ -7,19 +7,21 @@ public class importantCollectible : MonoBehaviour
 {
     private bool pickUpAllowed = false;
     private bool transitionStarted = false;
-    private float transitionTimer = 6.0f;
+    private float transitionTimer = 8.0f;
     private Animator _animator;
     private Renderer _renderer;
 
     public GameObject levelFader;
-    public int index;
     public Animator textAnimator;
+
+    private IEnumerator fadeScreen;
 
     // Start is called before the first frame update
     void Start()
     {
         _animator = levelFader.GetComponent<Animator>();
         _renderer = GetComponent<Renderer>();
+        fadeScreen = BeginFadingScreen(3.0f);
     }
     
     private void Update()
@@ -29,7 +31,8 @@ public class importantCollectible : MonoBehaviour
         if (pickUpAllowed == true && Input.GetKeyDown(KeyCode.E))
         {
             transitionStarted = true;
-            
+            FindObjectOfType<audioManager>().Play("Pickup");
+            StartCoroutine(fadeScreen);
         }
 
 
@@ -37,9 +40,8 @@ public class importantCollectible : MonoBehaviour
         {
             textAnimator.SetBool("picked_up", true);
             transitionTimer -= Time.deltaTime;
-            _animator.SetBool("level_completed", true);
             _renderer.enabled = false;
-            FindObjectOfType<audioManager>().Play("Pickup");
+            
         }
 
         if (transitionTimer <= 0)
@@ -61,6 +63,12 @@ public class importantCollectible : MonoBehaviour
 
     void LoadSpecifiedLevel()
     {
-        SceneManager.LoadScene(index);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    private IEnumerator BeginFadingScreen(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        _animator.SetBool("level_completed", true);
     }
 }
