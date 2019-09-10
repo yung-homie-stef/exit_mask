@@ -12,7 +12,11 @@ public class BoxCutter : MonoBehaviour
 
     public GameObject equippableBoxCutter;
     public GameObject Player;
-    public Animator textAnimator;
+
+    public Animator textAnimator1;
+    public Animator textAnimator2;
+
+
     public GameObject cutterTextTrigger;
     public GameObject[] screens;
 
@@ -57,7 +61,8 @@ public class BoxCutter : MonoBehaviour
             screens[i].SetActive(true);
         }
 
-        textAnimator.SetBool("picked_up", true);
+        textAnimator1.SetBool("picked_up", true);
+        textAnimator2.SetBool("picked_up", true);
         Destroy(gameObject);
         equippableBoxCutter.SetActive(true);
         _inventory.SetBoxCutterStatus(true);
