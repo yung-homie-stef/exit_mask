@@ -62,8 +62,8 @@ public class characterController : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown("escape"))
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
 
         //if (Input.GetKeyDown("space"))
         //   rb.AddForce(new Vector3(0, jumpImpulse, 0), ForceMode.Impulse);
