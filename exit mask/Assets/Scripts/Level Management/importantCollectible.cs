@@ -8,18 +8,19 @@ public class importantCollectible : MonoBehaviour
     private bool pickUpAllowed = false;
     private bool transitionStarted = false;
     private float transitionTimer = 8.0f;
-    private Animator _animator;
+    private Animator _fadeAnimator;
     private Renderer _renderer;
 
     public GameObject levelFader;
-    public Animator textAnimator;
+    public Animator textAnimator1;
+    public Animator textAnimator2;
 
     private IEnumerator fadeScreen;
 
     // Start is called before the first frame update
     void Start()
     {
-        _animator = levelFader.GetComponent<Animator>();
+        _fadeAnimator = levelFader.GetComponent<Animator>();
         _renderer = GetComponent<Renderer>();
         fadeScreen = BeginFadingScreen(3.0f);
     }
@@ -38,7 +39,8 @@ public class importantCollectible : MonoBehaviour
 
         if (transitionStarted == true)
         {
-            textAnimator.SetBool("picked_up", true);
+            textAnimator1.SetBool("picked_up", true);
+            textAnimator2.SetBool("picked_up", true);
             transitionTimer -= Time.deltaTime;
             _renderer.enabled = false;
             
@@ -69,6 +71,6 @@ public class importantCollectible : MonoBehaviour
     private IEnumerator BeginFadingScreen(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        _animator.SetBool("level_completed", true);
+        _fadeAnimator.SetBool("level_completed", true);
     }
 }
