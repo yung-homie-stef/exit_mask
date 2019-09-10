@@ -13,11 +13,13 @@ public class characterController : MonoBehaviour
     private Animator _animator;
     private float stabTime;
     private bool stabTimerStarted;
+    private bool escBeenPressed;
 
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         rb = gameObject.GetComponent<Rigidbody>();
         _animator = gameObject.GetComponent<Animator>();
@@ -25,8 +27,9 @@ public class characterController : MonoBehaviour
         _animator.SetBool("can_attack_self", true);
 
 
-       stabTime = 0.9f;
+        stabTime = 0.9f;
         stabTimerStarted = false;
+        escBeenPressed = false;
 
     }
 
@@ -62,16 +65,20 @@ public class characterController : MonoBehaviour
             
         }
 
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-
         //if (Input.GetKeyDown("space"))
-        //   rb.AddForce(new Vector3(0, jumpImpulse, 0), ForceMode.Impulse);
+        //   rb.AddForce(new Vector3(0, jumpImpulse, 0), ForceMode.Impulse);            // commented out so I can continue using this for dev hacks later on
 
         // left click to attack
         if (Input.GetMouseButtonDown(0))
         {
                 _animator.SetBool("is_attacking", true);
+
+            if (escBeenPressed == true)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                escBeenPressed = false;
+            }
         }
         else
         {
@@ -86,6 +93,18 @@ public class characterController : MonoBehaviour
                 _animator.SetBool("is_attacking_self", true);
                 stabTimerStarted = true;
             }
+
+        }
+
+        if (Input.GetKeyDown("escape"))
+        {
+            if (escBeenPressed == false)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                escBeenPressed = true;
+            }
+
         }
 
         if (gameObject.transform.position.y < gameObject.GetComponent<Death>().killVolume)
@@ -130,6 +149,22 @@ public class characterController : MonoBehaviour
             fume.GetComponent<Fume>().setStun(true);
             
 
+        }
+    }
+
+    void SetCursorStatus(bool stat)
+    {
+        if (stat == false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Debug.Log("mouse dead");
+        }
+        else if (stat == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Debug.Log("mouse alive");
         }
     }
 }
