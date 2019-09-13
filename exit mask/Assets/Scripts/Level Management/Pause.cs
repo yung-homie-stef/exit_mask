@@ -21,16 +21,19 @@ public class Pause : MonoBehaviour
             else
             {
                 PauseGame();
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
     }
 
     public void ResumeGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1.0f;
         isPaused = false;
-        gameObject.GetComponent<CursorUnlocker>().enabled = false;
     }
 
     void PauseGame()
@@ -38,7 +41,6 @@ public class Pause : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0.0f;
         isPaused = true;
-        gameObject.GetComponent<CursorUnlocker>().enabled = true;
     }
 
     public void BackToMainMenu()
@@ -49,7 +51,6 @@ public class Pause : MonoBehaviour
 
     public void Quit()
     {
-        Debug.Log("BYE");
         Application.Quit();
     }
 

@@ -13,7 +13,6 @@ public class characterController : MonoBehaviour
     private Animator _animator;
     private float stabTime;
     private bool stabTimerStarted;
-    private bool escBeenPressed;
 
     // Start is called before the first frame update
     void Start()
@@ -85,17 +84,6 @@ public class characterController : MonoBehaviour
             {
                 _animator.SetBool("is_attacking_self", true);
                 stabTimerStarted = true;
-            }
-
-        }
-
-        if (Input.GetKeyDown("escape"))
-        {
-            if (escBeenPressed == false)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                escBeenPressed = true;
             }
 
         }
