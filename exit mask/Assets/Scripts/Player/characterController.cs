@@ -29,7 +29,7 @@ public class characterController : MonoBehaviour
 
         stabTime = 0.9f;
         stabTimerStarted = false;
-        escBeenPressed = false;
+
 
     }
 
@@ -72,13 +72,6 @@ public class characterController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
                 _animator.SetBool("is_attacking", true);
-
-            if (escBeenPressed == true)
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-                escBeenPressed = false;
-            }
         }
         else
         {
@@ -152,19 +145,4 @@ public class characterController : MonoBehaviour
         }
     }
 
-    void SetCursorStatus(bool stat)
-    {
-        if (stat == false)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            Debug.Log("mouse dead");
-        }
-        else if (stat == true)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Debug.Log("mouse alive");
-        }
-    }
 }

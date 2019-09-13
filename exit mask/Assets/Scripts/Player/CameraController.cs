@@ -43,7 +43,7 @@ public class CameraController : MonoBehaviour
         smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f / smoothing);
         smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smoothing);
 
-        if (is_dead == false)
+        if (is_dead == false && Pause.isPaused == false)
         {
             mouseLook += smoothV; // the player cannot look around when they are dying. quickly gets flagged back to false when you respawn.
         }

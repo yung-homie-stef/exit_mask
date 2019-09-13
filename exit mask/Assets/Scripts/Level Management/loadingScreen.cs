@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Chapter : MonoBehaviour
+public class loadingScreen : MonoBehaviour
 {
     public GameObject image;
     
     private Animator _animator;
     private IEnumerator loadCoroutine;
     private IEnumerator fadeCoroutine;
+
+    public float fadeTime;
+    public float loadTime;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +22,8 @@ public class Chapter : MonoBehaviour
 
     private void Update()
     {
-        loadCoroutine = loadNextLevel(10.0f);
-        fadeCoroutine = fadeChapterScreen(4.0f);
+        loadCoroutine = loadNextLevel(loadTime);
+        fadeCoroutine = fadeChapterScreen(fadeTime);
         StartCoroutine(fadeCoroutine);
         StartCoroutine(loadCoroutine);
     }
