@@ -30,6 +30,14 @@ public class Cowl : MonoBehaviour
             agent.SetDestination(newPos);
             timer = 0;
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (gameObject.GetComponent<Follow>().isActiveAndEnabled == false)
+            gameObject.GetComponent<Follow>().enabled = true;
+            else
+                gameObject.GetComponent<Follow>().enabled = false;
+        }
     }
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
