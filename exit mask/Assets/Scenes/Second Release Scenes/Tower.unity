@@ -411,7 +411,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 4781562fa6469fd40b0013f04b590604,
         type: 3}
       propertyPath: m_Name
-      value: cowled_test
+      value: cowled
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4781562fa6469fd40b0013f04b590604,
         type: 3}
@@ -483,6 +483,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.186367
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 4781562fa6469fd40b0013f04b590604,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: df07f2f895eda1944b0051e8ee4db39a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4781562fa6469fd40b0013f04b590604, type: 3}
 --- !u!1 &779570050 stripped
@@ -647,7 +652,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 0.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -680,7 +685,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885385387}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0c4527844a885a4b9afa6ae937eb432, type: 3}
   m_Name: 
