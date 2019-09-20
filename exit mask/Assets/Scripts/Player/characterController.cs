@@ -5,7 +5,7 @@ using UnityEngine;
 public class characterController : MonoBehaviour
 {
     public float speed;
-    //public float jumpImpulse;
+    public float jumpImpulse;
     public GameObject selfHarmCanvas; // tv static display when player cuts themselves
     
     private GameObject[] fumes; // array filled by looking for every enemy with proper tag
@@ -64,8 +64,8 @@ public class characterController : MonoBehaviour
             
         }
 
-        //if (Input.GetKeyDown("space"))
-        //   rb.AddForce(new Vector3(0, jumpImpulse, 0), ForceMode.Impulse);            // commented out so I can continue using this for dev hacks later on
+        if (Input.GetKeyDown("space"))
+            rb.AddForce(new Vector3(0, jumpImpulse, 0), ForceMode.Impulse);            // commented out so I can continue using this for dev hacks later on
 
         // left click to attack
         if (Input.GetMouseButtonDown(0))
