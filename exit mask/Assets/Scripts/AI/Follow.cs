@@ -7,7 +7,6 @@ public class Follow : MonoBehaviour
     public Transform Player;
 
     float chaseSpeed;
-    float maxDistance;
     float minDistance;
 
     private Animator _animator;
@@ -18,6 +17,7 @@ public class Follow : MonoBehaviour
     {
         chaseSpeed = 3.0f;
         minDistance = 10.0f;
+
         _animator = gameObject.GetComponent<Animator>();
     }
 
@@ -25,14 +25,12 @@ public class Follow : MonoBehaviour
     {
         //transform.LookAt(Player);
 
-        if (Vector3.Distance(transform.position, Player.position) <= minDistance)
+        if (_animator.GetBool("is_chasing") == true)
         {
-            _animator.SetBool("is_chasing", true);
+
             transform.position += transform.forward * chaseSpeed * Time.deltaTime;
         }
-        else
-        {
-            _animator.SetBool("is_chasing", false);
-        }
+
+     
     }
 }
