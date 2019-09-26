@@ -7,7 +7,6 @@ public class Raycasting : MonoBehaviour
     private Ray _ray;
     private RaycastHit _hit;
     private Animator _animator;
-    private IEnumerator resetCoroutine;
 
     public Color rayColor;
     public GameObject[] cowls;
@@ -16,12 +15,12 @@ public class Raycasting : MonoBehaviour
     void Start()
     {
         _animator = gameObject.GetComponent<Animator>();
-        resetCoroutine = ResetAlertStatus(6.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
+
         _ray = new Ray(transform.position, transform.forward * 100);
         Debug.DrawRay(transform.position, transform.forward * 100, rayColor);
 
@@ -33,16 +32,9 @@ public class Raycasting : MonoBehaviour
                 cowl.GetComponent<Animator>().SetBool("is_chasing", true);
             }
 
-
-            _animator.SetBool("is_alerted", true); // when the raycast is hit play the alert animation
-            StartCoroutine(resetCoroutine);
+            _animator.SetBool("is_alerted", true);
             Debug.Log("ray has hit");
         }
     }
 
-    IEnumerator ResetAlertStatus(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        _animator.SetBool("is_alerted", false);
-    }
 }
