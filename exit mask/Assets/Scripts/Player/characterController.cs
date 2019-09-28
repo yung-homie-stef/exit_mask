@@ -17,6 +17,7 @@ public class characterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        #region Initialization
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -28,7 +29,7 @@ public class characterController : MonoBehaviour
 
         stabTime = 0.9f;
         stabTimerStarted = false;
-
+        #endregion 
 
     }
 
@@ -41,6 +42,8 @@ public class characterController : MonoBehaviour
         strafe *= Time.deltaTime;
 
         transform.Translate(strafe, 0, translation);
+
+        #region Player Self-Harm
 
         // this timer update check gives a 1 second delay between the start of the self-harm animation
         // so that enemies are stunned right when the knife comes in contact with the player's wrist
@@ -63,7 +66,9 @@ public class characterController : MonoBehaviour
             selfHarmCanvas.SetActive(true); // once the self harm stun on the enemies is finished, disable the canvas overlay
             
         }
+        #endregion
 
+        #region Player Input
         if (Input.GetKeyDown("space"))
             rb.AddForce(new Vector3(0, jumpImpulse, 0), ForceMode.Impulse);            // commented out so I can continue using this for dev hacks later on
 
@@ -87,6 +92,7 @@ public class characterController : MonoBehaviour
             }
 
         }
+        #endregion 
 
         if (gameObject.transform.position.y < gameObject.GetComponent<Death>().killVolume)
         {
@@ -98,7 +104,9 @@ public class characterController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+        #region Enemy Collision
+
+        #region Fume Collision
         if (collision.gameObject.tag == "Fume_Enemy")
         {
             // the player technically only collides with fume enemies if they are not stunned
@@ -109,14 +117,31 @@ public class characterController : MonoBehaviour
                 gameObject.GetComponent<Death>().Kill();
             }
         }
+        #endregion
 
+        #region Cowl Collision
+        if (collision.gameObject.tag == "Cowl_Enemy")
+        {
+            // the player technically only collides with cowl enemies if they are chasing the player
+            // otherwise they wont get damaged
+            if (collision.gameObject.GetComponent<Animator>().GetBool("is_chasing") == true)
+            {
+                // die if you touch an enemy
+                gameObject.GetComponent<Death>().Kill();
+            }
+        }
+        #endregion
+
+        #region Pendra Collision
         if (collision.gameObject.tag == "Pendra_Enemy")
         {
-            // otherwise if the player collides with a centipede just kill them instantly
+            // otherwise if the player collides with other enemies just kill them instantly
             // as they do not have any stun status to check for
             gameObject.GetComponent<Death>().Kill();
         }
-        
+        #endregion
+
+        #endregion
     }
 
     void StunEnemies()
