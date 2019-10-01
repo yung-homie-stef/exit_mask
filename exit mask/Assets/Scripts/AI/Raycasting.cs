@@ -21,8 +21,9 @@ public class Raycasting : MonoBehaviour
     void Update()
     {
 
-        _ray = new Ray(transform.position, transform.forward * 100);
-        Debug.DrawRay(transform.position, transform.forward * 100, rayColor);
+        //_ray = new Ray(transform.position, transform.forward * 100);
+        Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
+        Debug.DrawRay(transform.position, forward, Color.green, 0.25f);
 
         if (Physics.Raycast(transform.position, transform.forward * 100, out _hit, Mathf.Infinity)) // occurs when the raycast is hit
         {
