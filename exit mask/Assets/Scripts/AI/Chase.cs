@@ -35,6 +35,7 @@ public class Chase : MonoBehaviour
             else if (distance > maxDistance)
             {
                 _agent.speed = 0.5f;
+                GetComponent<Animator>().SetBool("is_chasing", false);
             }
         }
         
