@@ -14,36 +14,29 @@ public class alertImages : MonoBehaviour
     void Start()
     {
         hasBeenAlerted = false;
-        canvasNum = -1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // TO-DO: get rid of this debug code and instead set the alerted bool to true 
-        // from another script
-        if (Input.GetKey(KeyCode.K))
-        {
-            SelectRandomCanvas(0, images.Length);
-            hasBeenAlerted = true;
-        }
-
         if (hasBeenAlerted == true)
         {
-            images[canvasNum].SetActive(true);
             alertTimer -= Time.deltaTime;
 
-                if (alertTimer <= 0)
+                if (alertTimer <= 0) // after a short delay disable the image on the screen
             {
                 images[canvasNum].SetActive(false);
-                this.enabled = false;
+                Destroy(this);
             }
         }
     }
 
     public void SelectRandomCanvas(int min, int max)
     {
-        canvasNum = Random.Range(min, max);
-
+        canvasNum = Random.Range(min, max); // generate a random int between 0 and 2, then activate the image in the array with that index value
+        Debug.Log(canvasNum);
+        images[canvasNum].SetActive(true);
+        hasBeenAlerted = true; // sets off the timer in update
     }
+
 }
