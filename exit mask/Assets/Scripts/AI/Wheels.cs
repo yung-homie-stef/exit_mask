@@ -30,6 +30,7 @@ public class Wheels : MonoBehaviour
 
                 foreach (GameObject cowl in cowls)
                 {
+                    // replace this with an is_aware animation instead
                     cowl.GetComponent<Animator>().SetBool("is_chasing", true);
                 }
             }

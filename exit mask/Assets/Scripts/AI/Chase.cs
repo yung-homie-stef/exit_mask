@@ -21,6 +21,7 @@ public class Chase : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, Player.transform.position);
 
+        // TO-DO: change this state to is_alerted
         if (GetComponent<Animator>().GetBool("is_chasing") == true)
         {
             if (distance < maxDistance)
@@ -29,6 +30,7 @@ public class Chase : MonoBehaviour
                 Vector3 newPosition = transform.position - towardsPlayer;
                 _agent.speed = 5.0f;
                 _agent.SetDestination(newPosition);
+                // TO-DO: Change animator state to is_chasing HERE
             }
             else if (distance > maxDistance)
             {
