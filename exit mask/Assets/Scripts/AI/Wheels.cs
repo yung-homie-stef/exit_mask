@@ -15,9 +15,9 @@ public class Wheels : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K)) // replace this with raycast logic
         {
-            gameObject.GetComponent<alertImages>().SelectRandomCanvas(0, 3);
+            gameObject.GetComponent<alertImages>().SelectRandomCanvas(0, 4);
         }
     }
 }
