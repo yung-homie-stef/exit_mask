@@ -5,6 +5,8 @@ using UnityEngine;
 public class Wheels : MonoBehaviour
 {
     private Animator _animator;
+    private IEnumerator unAlertCoroutine;
+    private bool rayHasHit;
 
     public GameObject[] cowls;
 
@@ -12,6 +14,7 @@ public class Wheels : MonoBehaviour
     void Start()
     {
         _animator = gameObject.GetComponent<Animator>();
+        unAlertCoroutine = SetAlertToFalse(5.0f);
     }
 
     // Update is called once per frame
@@ -23,16 +26,20 @@ public class Wheels : MonoBehaviour
 
         if (Physics.Raycast(_ray, out _hit, 100))
         {
-            if (_hit.collider.tag == "Player")
+            if (_hit.collider.tag == "Player" && _animator.GetBool("is_alerted") == false && rayHasHit == false)
             {
-                _animator.SetBool("is_alerted", true);
+                
                 Debug.Log("ray has hit");
-
+                
                 foreach (GameObject cowl in cowls)
                 {
                     // replace this with an is_aware animation instead
-                    cowl.GetComponent<Animator>().SetBool("is_chasing", true);
+                    cowl.GetComponent<Animator>().SetBool("is_aware", true);
                 }
+
+                StartCoroutine(unAlertCoroutine);
+                _animator.SetBool("is_alerted", true);
+                rayHasHit = true;
             }
         }
 
@@ -43,4 +50,13 @@ public class Wheels : MonoBehaviour
             gameObject.GetComponent<alertImages>().SelectRandomCanvas(0, 4);
         }
     }
+
+    private IEnumerator SetAlertToFalse(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        _animator.SetBool("is_alerted", false);
+
+    }
+
+
 }

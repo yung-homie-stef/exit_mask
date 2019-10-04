@@ -1289,6 +1289,16 @@ PrefabInstance:
       propertyPath: deathFader
       value: 
       objectReference: {fileID: 1576788347}
+    - target: {fileID: 1159800119692649925, guid: 1a546eec564a1cd438f38cfef12cf948,
+        type: 3}
+      propertyPath: sensitivityDepth
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159800119692649925, guid: 1a546eec564a1cd438f38cfef12cf948,
+        type: 3}
+      propertyPath: edgeDetectMaterial
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a546eec564a1cd438f38cfef12cf948, type: 3}
 --- !u!1 &337011311 stripped
@@ -5438,8 +5448,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cowls:
   - {fileID: 1885385387}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1255069614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10686,7 +10694,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wanderRadius: 10
   wanderTimer: 3
-  isAlerted: 0
 --- !u!114 &1885385391
 MonoBehaviour:
   m_ObjectHideFlags: 0

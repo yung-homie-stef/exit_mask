@@ -5,10 +5,13 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: normal_walk
+    second: walk
   - first:
-      74: 221988811259610538
+      74: -998496362607748373
     second: chase
+  - first:
+      74: 2665397957027696624
+    second: enraged
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -38,7 +41,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: normal_walk
+      name: walk
       takeName: Take 001
       internalID: 1827226128182048838
       firstFrame: 60
@@ -69,7 +72,7 @@ ModelImporter:
     - serializedVersion: 16
       name: chase
       takeName: Take 001
-      internalID: 221988811259610538
+      internalID: -998496362607748373
       firstFrame: 120
       lastFrame: 150
       wrapMode: 0
@@ -79,6 +82,35 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: enraged
+      takeName: Take 001
+      internalID: 2665397957027696624
+      firstFrame: 180
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

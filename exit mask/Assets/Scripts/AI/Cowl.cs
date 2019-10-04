@@ -7,7 +7,6 @@ public class Cowl : MonoBehaviour
 
     public float wanderRadius;
     public float wanderTimer;
-    public bool isAlerted;
 
     private Transform _target;
     private NavMeshAgent _agent;
@@ -20,7 +19,7 @@ public class Cowl : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _timer = wanderTimer;
         _animator = GetComponent<Animator>();
-        isAlerted = false;
+
     }
 
     // Update is called once per frame
@@ -35,11 +34,14 @@ public class Cowl : MonoBehaviour
             _timer = 0;
         }
 
-        if (isAlerted == true)
+        // cowled enemies pause briefly when they become enraged 
+        // so their navmesh stops temporarily
+        if (_animator.GetBool("is_aware") == true)
         {
-            // TO-DO:
-            // animator setbool isalerted to true
+            _agent.isStopped = true;
         }
+
+
 
     }
 
@@ -55,4 +57,5 @@ public class Cowl : MonoBehaviour
 
         return navHit.position;
     }
+
 }
