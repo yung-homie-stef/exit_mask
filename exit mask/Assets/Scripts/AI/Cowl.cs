@@ -38,7 +38,7 @@ public class Cowl : MonoBehaviour
         // so their navmesh stops temporarily
         if (_animator.GetBool("is_aware") == true)
         {
-            _agent.isStopped = true;
+
         }
 
 
