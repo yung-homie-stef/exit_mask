@@ -21,7 +21,7 @@ public class Chase : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, Player.transform.position);
 
-        // TO-DO: change this state to is_alerted
+        // if the wheelcast raycast has been hit AND you are too close to a cowled begin chase
         if (GetComponent<Animator>().GetBool("is_aware") == true)
         {
             if (distance < maxDistance)
@@ -31,8 +31,9 @@ public class Chase : MonoBehaviour
                 Vector3 newPosition = transform.position - towardsPlayer;
                 _agent.speed = 5.0f;
                 _agent.SetDestination(newPosition);
-                // TO-DO: Change animator state to is_chasing HERE
             }
+
+            // if you get far enough stop chasing
             else if (distance > maxDistance)
             {
                 _agent.speed = 0.5f;
