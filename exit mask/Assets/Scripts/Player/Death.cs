@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Death : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Death : MonoBehaviour
     private Animator _fadeAnimator;
     private float deathTime;
     private bool deathTimerStarted;
+    private GameObject[] cowls;
+    private GameObject[] wheels;
 
     public Transform playerRespawnPoint;
     public Camera playerCamera;
@@ -59,6 +62,8 @@ public class Death : MonoBehaviour
         gameObject.GetComponent<characterController>().enabled = false;
         playerCamera.GetComponent<CameraController>().is_dead = true;
 
+        ResetAIBehaviour();
+
         deathTimerStarted = true; // start death timer, making the player respawn after it has reached 0
     }
 
@@ -83,5 +88,26 @@ public class Death : MonoBehaviour
     private void UpdatePlayerRespawnPoint(Transform tf)
     {
         playerRespawnPoint.position = tf.position;
+    }
+
+    private void ResetAIBehaviour()
+    {
+        cowls = GameObject.FindGameObjectsWithTag("Cowl_Enemy");
+        wheels = GameObject.FindGameObjectsWithTag("Wheel_Enemy");
+
+        foreach (GameObject cowl in cowls)
+        {
+            // reset all flags in Cowled enemies animator
+            cowl.GetComponent<Animator>().SetBool("is_aware", false);
+            cowl.GetComponent<Animator>().SetBool("is_chasing", false);
+            cowl.GetComponent<NavMeshAgent>().speed = 0.5f;
+
+        }
+
+        foreach (GameObject wheel in wheels)
+        {
+            wheel.GetComponent<Wheels>().rayHasHit = false;
+
+        }
     }
 }

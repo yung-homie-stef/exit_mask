@@ -6,8 +6,8 @@ public class Wheels : MonoBehaviour
 {
     private Animator _animator;
     private IEnumerator unAlertCoroutine;
-    private bool rayHasHit;
 
+    public bool rayHasHit;
     public GameObject[] cowls;
 
     // Start is called before the first frame update
@@ -33,7 +33,6 @@ public class Wheels : MonoBehaviour
                 
                 foreach (GameObject cowl in cowls)
                 {
-                    // replace this with an is_aware animation instead
                     cowl.GetComponent<Animator>().SetBool("is_aware", true);
                 }
 

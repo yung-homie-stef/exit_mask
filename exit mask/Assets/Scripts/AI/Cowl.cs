@@ -34,15 +34,6 @@ public class Cowl : MonoBehaviour
             _timer = 0;
         }
 
-        // cowled enemies pause briefly when they become enraged 
-        // so their navmesh stops temporarily
-        if (_animator.GetBool("is_aware") == true)
-        {
-
-        }
-
-
-
     }
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
