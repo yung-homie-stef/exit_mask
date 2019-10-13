@@ -7,13 +7,16 @@ public class Instructions : MonoBehaviour
 {
     public Text levelText;
     public string currentInstructionText;
+    public GameObject textBG;
 
-    private Animator _animator;
+    private Animator _textAnimator;
+    private Animator _bgAnimator;
     private IEnumerator disableCoroutine;
 
     private void Start()
     {
-        _animator = levelText.GetComponent<Animator>();
+        _textAnimator = levelText.GetComponent<Animator>();
+        _bgAnimator = textBG.GetComponent<Animator>();
         disableCoroutine = DisableTextTemporarily(12.0f);
     }
 
@@ -28,7 +31,8 @@ public class Instructions : MonoBehaviour
     public void ChangeText(string txt)
     {
         levelText.text = txt;
-        _animator.SetBool("has_changed", true);
+        _textAnimator.SetBool("has_changed", true);
+        _bgAnimator.SetBool("has_changed", true);
         StartCoroutine(disableCoroutine);
         gameObject.GetComponent<BoxCollider>().enabled = false;
     }
@@ -36,7 +40,8 @@ public class Instructions : MonoBehaviour
     private IEnumerator DisableTextTemporarily(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        _animator.SetBool("has_changed", false);
+        _textAnimator.SetBool("has_changed", false);
+        _bgAnimator.SetBool("has_changed", false);
         Destroy(gameObject);
     }
 
