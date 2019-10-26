@@ -64,6 +64,10 @@ public class Death : MonoBehaviour
 
         ResetAIBehaviour();
 
+        /// NOTE: consider using Coroutine timers instead of relying on update.
+        /// instead of setting a flag for the update method to catch, you could 
+        /// start a coroutine here that waits an amount of time, and then performs the respawn.
+        /// Less of an optimization, more easier to read and track code.
         deathTimerStarted = true; // start death timer, making the player respawn after it has reached 0
     }
 

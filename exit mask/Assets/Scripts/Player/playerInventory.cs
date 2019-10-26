@@ -14,8 +14,11 @@ public class playerInventory : MonoBehaviour
 
     void Update()
     {
-
-     if (hasCutter == true)
+        /// NOTE: why not set this bool once when you 
+        /// call SetBoxCutterStatus? instead of having to
+        /// iterate over the if statement every frame.
+        /// unless it needs to be updated every frame.
+        if (hasCutter == true)
         {
             _animator.SetBool("is_armed", true);
         }

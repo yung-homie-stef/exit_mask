@@ -43,7 +43,9 @@ public class Wheels : MonoBehaviour
         }
 
 
-
+        /// NOTE: Consider a static class that defines keys for your game.
+        /// Instead of calling KeyCode.K arbitrarily, call a const variables 
+        /// for this action. Easier to change in the future!
         if (Input.GetKeyDown(KeyCode.K)) // replace this with raycast logic
         {
             gameObject.GetComponent<alertImages>().SelectRandomCanvas(0, 4);

@@ -7,7 +7,7 @@ public class characterController : MonoBehaviour
     public float speed;
     public float jumpImpulse;
     public GameObject selfHarmCanvas; // tv static display when player cuts themselves
-    
+
     private GameObject[] fumes; // array filled by looking for every enemy with proper tag
     private Rigidbody rb;
     private Animator _animator;
@@ -24,8 +24,11 @@ public class characterController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         _animator = gameObject.GetComponent<Animator>();
 
+        /// NOTE: You have a lot of these animation calls everywhere
+        /// if the names for the anim properties ever change, you'll have to change
+        /// them everywhere. Consider making a static class with the anim names as 
+        /// const strings 
         _animator.SetBool("can_attack_self", true);
-
 
         stabTime = 0.9f;
         stabTimerStarted = false;
@@ -36,6 +39,8 @@ public class characterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /// NOTE: if these values are used every frame, declare them as private variables 
+        /// inside the class, rather than function scope. This will reduce GC allocations
         float translation = Input.GetAxis("Vertical") * speed;
         float strafe = Input.GetAxis("Horizontal") * speed;
         translation *= Time.deltaTime;
@@ -61,10 +66,12 @@ public class characterController : MonoBehaviour
 
             _animator.SetBool("is_attacking_self", false);
 
+            /// NOTE: the audio manager is a singleton, why not call it using the instance?
+            /// audioManager.instance.Play("Self_Harm_Static");
             FindObjectOfType<audioManager>().Play("Self_Harm_Static");
 
             selfHarmCanvas.SetActive(true); // once the self harm stun on the enemies is finished, disable the canvas overlay
-            
+
         }
         #endregion
 
@@ -72,10 +79,13 @@ public class characterController : MonoBehaviour
         if (Input.GetKeyDown("space"))
             rb.AddForce(new Vector3(0, jumpImpulse, 0), ForceMode.Impulse);            // commented out so I can continue using this for dev hacks later on
 
+        /// NOTE: _animator.SetBool("is_attacking", Input.GetMouseButtonDown(0));
+        /// No optimization here, just cleaner
+        
         // left click to attack
         if (Input.GetMouseButtonDown(0))
         {
-                _animator.SetBool("is_attacking", true);
+            _animator.SetBool("is_attacking", true);
         }
         else
         {
@@ -94,6 +104,8 @@ public class characterController : MonoBehaviour
         }
         #endregion 
 
+        /// NOTE: avoid calling GetComponent every frame, very costly
+        /// instead, store as a member variable and get the component on init
         if (gameObject.transform.position.y < gameObject.GetComponent<Death>().killVolume)
         {
             gameObject.GetComponent<Death>().Kill();
@@ -147,13 +159,13 @@ public class characterController : MonoBehaviour
     void StunEnemies()
     {
         // look for every Fume enemy and fill an array with them
-            fumes = GameObject.FindGameObjectsWithTag("Fume_Enemy");
+        fumes = GameObject.FindGameObjectsWithTag("Fume_Enemy");
 
-        foreach(GameObject fume in fumes)
+        foreach (GameObject fume in fumes)
         {
             // for each Fume in this scene, call its stun method
             fume.GetComponent<Fume>().setStun(true);
-            
+
 
         }
     }

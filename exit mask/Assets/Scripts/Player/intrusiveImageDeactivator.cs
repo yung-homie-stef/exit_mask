@@ -99,6 +99,10 @@ public class intrusiveImageDeactivator : MonoBehaviour
 
     }
 
+    /// NOTE:
+    /// This is small, but essentially pointless and generates a little more
+    /// overhead than just calling Random.Range explicitly. The longer the chain
+    /// to perform the function, the more "spaghetti" your code becomes.
     private float GenerateRandomTimer(float min, float max)
     {
         return Random.Range(min, max);
@@ -110,8 +114,6 @@ public class intrusiveImageDeactivator : MonoBehaviour
         float x = Random.Range(minX, maxX);
         float y = Random.Range(minY, maxY);
         return new Vector3(x, y, 1);
-
-        
     }
 
        
