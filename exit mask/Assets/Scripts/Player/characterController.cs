@@ -141,6 +141,15 @@ public class characterController : MonoBehaviour
         }
         #endregion
 
+        #region Judicator Collision
+        if (collision.gameObject.tag == "Judicator_Enemy")
+        {
+            // otherwise if the player collides with other enemies just kill them instantly
+            // as they do not have any stun status to check for
+            gameObject.GetComponent<Death>().Kill();
+        }
+        #endregion
+
         #endregion
     }
 

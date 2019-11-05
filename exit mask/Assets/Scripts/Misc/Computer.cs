@@ -59,7 +59,6 @@ public class Computer : MonoBehaviour
         }
         StartCoroutine(hackCoroutine); // call this coroutine once the player has hacked the computer
 
-        //TODO: call decrement function of door 
     }
 
     IEnumerator StopHacking(int waitTime)
