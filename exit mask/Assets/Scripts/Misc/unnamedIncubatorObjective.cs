@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class unnamedIncubatorObjective : MonoBehaviour
 {
-    private Animator _vaultAnimator;
     private Animator _unlockerAnimator;
     private BoxCollider _collider;
     private bool unlockingAllowed = false;
 
     public GameObject Judicator;
+    public GameObject[] prisonBars;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +43,12 @@ public class unnamedIncubatorObjective : MonoBehaviour
     {
         // activate the chasing capabilities of the judicator
         Judicator.GetComponent<Judicator>().isFollowing = true;
+
         // get animator of the bars and play unlocking animation
+        for (int i=0; i < prisonBars.Length;  i++)
+        {
+            prisonBars[i].GetComponent<Animator>().SetBool("is_unlocked", true);
+        }
 
         _collider.enabled = false;
     }
