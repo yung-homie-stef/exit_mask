@@ -902,6 +902,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: prison_system
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 0ba118afcaf1dbc42b36db1821afcb48,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f672f6993f9c6794394f1ab79f703a75, type: 2}
     - target: {fileID: -4216859302048453862, guid: 0ba118afcaf1dbc42b36db1821afcb48,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -972,11 +977,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.8679956
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 0ba118afcaf1dbc42b36db1821afcb48,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: f672f6993f9c6794394f1ab79f703a75, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ba118afcaf1dbc42b36db1821afcb48, type: 3}
 --- !u!1 &238517213 stripped
@@ -1365,6 +1365,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: prison_system (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 0ba118afcaf1dbc42b36db1821afcb48,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f672f6993f9c6794394f1ab79f703a75, type: 2}
     - target: {fileID: -4216859302048453862, guid: 0ba118afcaf1dbc42b36db1821afcb48,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1435,11 +1440,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.8679956
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 0ba118afcaf1dbc42b36db1821afcb48,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: f672f6993f9c6794394f1ab79f703a75, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ba118afcaf1dbc42b36db1821afcb48, type: 3}
 --- !u!1 &433063322
@@ -1842,7 +1842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &522137217
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3588,6 +3588,7 @@ GameObject:
   - component: {fileID: 1111943740}
   - component: {fileID: 1111943742}
   - component: {fileID: 1111943741}
+  - component: {fileID: 1111943743}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -3611,8 +3612,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -588, y: 302}
-  m_SizeDelta: {x: 400, y: 300}
+  m_AnchoredPosition: {x: -588, y: 276}
+  m_SizeDelta: {x: 508.7, y: 316.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1111943741
 MonoBehaviour:
@@ -3634,7 +3635,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6316853224816240710, guid: a541643d279fd7f4d884b94458020c1a,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3651,6 +3653,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111943739}
   m_CullTransparentMesh: 0
+--- !u!95 &1111943743
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111943739}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c4c10cd08d8081b449ec44a9e42742d4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1118019976 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 4781562fa6469fd40b0013f04b590604,
