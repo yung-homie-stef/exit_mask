@@ -10,6 +10,7 @@ public class unnamedIncubatorObjective : MonoBehaviour
 
     public GameObject Judicator;
     public GameObject[] prisonBars;
+    public GameObject Exit;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,8 @@ public class unnamedIncubatorObjective : MonoBehaviour
         {
             prisonBars[i].GetComponent<Animator>().SetBool("is_unlocked", true);
         }
+
+        Exit.GetComponent<wombExit>().DecrementBloodCount();
 
         _collider.enabled = false;
     }
