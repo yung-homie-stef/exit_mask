@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class Chase : MonoBehaviour
 {
     private NavMeshAgent _agent;
+    private bool isStopped = true;
+    private float stoppedTimer = 4.0f;
 
     public GameObject Player;
     public float maxDistance = 5.0f;
@@ -24,20 +26,35 @@ public class Chase : MonoBehaviour
         // if the wheelcast raycast has been hit AND you are too close to a cowled begin chase
         if (GetComponent<Animator>().GetBool("is_aware") != false)
         {
-            if (distance < maxDistance)
+            if (isStopped == true)
             {
-                GetComponent<Animator>().SetBool("is_chasing", true);
-                Vector3 towardsPlayer = transform.position - Player.transform.position;
-                Vector3 newPosition = transform.position - towardsPlayer;
-                _agent.speed = 5.0f;
-                _agent.SetDestination(newPosition);
+                _agent.isStopped = true;
+                stoppedTimer -= Time.deltaTime;
+                if (stoppedTimer <= 0)
+                {
+                    isStopped = false;
+                    stoppedTimer = 0;
+                    _agent.isStopped = false;
+                }
             }
 
-            // if you get far enough stop chasing
-            else if (distance > maxDistance)
+            if (isStopped == false)
             {
-                _agent.speed = 0.5f;
-                GetComponent<Animator>().SetBool("is_chasing", false);
+                if (distance < maxDistance)
+                {
+                    GetComponent<Animator>().SetBool("is_chasing", true);
+                    Vector3 towardsPlayer = transform.position - Player.transform.position;
+                    Vector3 newPosition = transform.position - towardsPlayer;
+                    _agent.speed = 5.0f;
+                    _agent.SetDestination(newPosition);
+                }
+
+                // if you get far enough stop chasing
+                else if (distance > maxDistance)
+                {
+                    _agent.speed = 0.5f;
+                    GetComponent<Animator>().SetBool("is_chasing", false);
+                }
             }
         }
         
