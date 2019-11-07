@@ -13,6 +13,7 @@ public class Wheels : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rayHasHit = false;
         _animator = gameObject.GetComponent<Animator>();
         unAlertCoroutine = SetAlertToFalse(5.0f);
     }
@@ -28,7 +29,7 @@ public class Wheels : MonoBehaviour
         {
             if (_hit.collider.tag == "Player" && _animator.GetBool("is_alerted") == false && rayHasHit == false)
             {
-                
+
                 Debug.Log("ray has hit");
                 
                 foreach (GameObject cowl in cowls)
@@ -42,12 +43,13 @@ public class Wheels : MonoBehaviour
             }
         }
 
-
-
-        if (Input.GetKeyDown(KeyCode.K)) // replace this with raycast logic
+        if (rayHasHit == true) // replace this with raycast logic
         {
+            rayHasHit = false;
             gameObject.GetComponent<alertImages>().SelectRandomCanvas(0, 4);
         }
+
+
     }
 
     private IEnumerator SetAlertToFalse(float waitTime)
