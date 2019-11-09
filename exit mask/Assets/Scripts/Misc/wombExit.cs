@@ -22,7 +22,8 @@ public class wombExit : MonoBehaviour
     {
         if (bloodCount == 0)
         {
-            _animator.SetBool("can_exit", true);
+            Debug.Log("zero");
+            //_animator.SetBool("can_exit", true);
             for (int i=0; i<wombSprites.Length; i++ )
             {
                 wombSprites[i].SetActive(false);
@@ -39,7 +40,7 @@ public class wombExit : MonoBehaviour
 
     void ActivateGIF(int index)
     {
-        wombSprites[index].SetActive(true);
+        wombSprites[index-1].SetActive(true);
     }
 
     public int GetBloodCount()

@@ -55,6 +55,6 @@ public class unnamedIncubatorObjective : MonoBehaviour
             prisonGates[i].SetActive(true);
         }
 
-        _collider.enabled = false;
+        this.enabled = false;
     }
 }
