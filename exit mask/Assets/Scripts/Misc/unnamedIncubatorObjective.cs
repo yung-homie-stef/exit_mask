@@ -7,6 +7,7 @@ public class unnamedIncubatorObjective : MonoBehaviour
     private Animator _unlockerAnimator;
     private BoxCollider _collider;
     private bool unlockingAllowed = false;
+    private IEnumerator prisonCoroutine;
 
     public GameObject Judicator;
     public GameObject[] prisonBars;
@@ -17,6 +18,7 @@ public class unnamedIncubatorObjective : MonoBehaviour
     void Start()
     {
         _collider = gameObject.GetComponent<BoxCollider>();
+        prisonCoroutine = DestroyPrisonBars(3.0f);
     }
 
     // Update is called once per frame
@@ -55,6 +57,21 @@ public class unnamedIncubatorObjective : MonoBehaviour
             prisonGates[i].SetActive(true);
         }
 
+        for (int i = 0; i < prisonBars.Length; i++)
+        {
+            prisonBars[i].GetComponent<Animator>().SetBool("is_unlocked", true);
+        }
+
+        StartCoroutine(prisonCoroutine);
         this.enabled = false;
+    }
+
+    private IEnumerator DestroyPrisonBars(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        for (int i = 0; i < prisonBars.Length; i++)
+        {
+            Destroy(prisonBars[i]);
+        }
     }
 }
