@@ -6,6 +6,7 @@ public class Wheels : MonoBehaviour
 {
     private Animator _animator;
     private IEnumerator unAlertCoroutine;
+    public float rayDist = 25;
 
     public bool rayHasHit;
     public GameObject[] cowls;
@@ -23,7 +24,7 @@ public class Wheels : MonoBehaviour
     {
         RaycastHit _hit;
         Ray _ray = new Ray(transform.position, transform.forward);
-        Debug.DrawRay(transform.position, transform.forward * 25, Color.green);
+        Debug.DrawRay(transform.position, transform.forward * rayDist, Color.green);
 
         if (Physics.Raycast(_ray, out _hit, 100))
         {
