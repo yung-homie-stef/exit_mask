@@ -12,7 +12,7 @@ public class wombExit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bloodCount = 4;
+        bloodCount = 3;
         _animator = gameObject.GetComponent<Animator>();
 
     }
@@ -23,11 +23,8 @@ public class wombExit : MonoBehaviour
         if (bloodCount == 0)
         {
             Debug.Log("zero");
-            //_animator.SetBool("can_exit", true);
-            for (int i=0; i<wombSprites.Length; i++ )
-            {
-                wombSprites[i].SetActive(false);
-            }
+            _animator.SetBool("open_door", true);
+           
         }
     }
 
@@ -40,7 +37,7 @@ public class wombExit : MonoBehaviour
 
     void ActivateGIF(int index)
     {
-        wombSprites[index-1].SetActive(true);
+        wombSprites[index].SetActive(true);
     }
 
     public int GetBloodCount()
