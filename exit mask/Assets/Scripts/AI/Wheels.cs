@@ -26,7 +26,7 @@ public class Wheels : MonoBehaviour
         Ray _ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(transform.position, transform.forward * rayDist, Color.green);
 
-        if (Physics.Raycast(_ray, out _hit, 100))
+        if (Physics.Raycast(_ray, out _hit, 100, 1 << 11)) // 11th element being the player layer
         {
             if (_hit.collider.tag == "Player" && _animator.GetBool("is_alerted") == false && rayHasHit == false)
             {
