@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class unnamedIncubatorObjective : MonoBehaviour
 {
-    private Animator _unlockerAnimator;
     private BoxCollider _collider;
     private bool unlockingAllowed = false;
     private IEnumerator prisonCoroutine;
@@ -47,6 +46,7 @@ public class unnamedIncubatorObjective : MonoBehaviour
     {
         // activate the chasing capabilities of the judicator
         Judicator.GetComponent<Judicator>().isFollowing = true;
+        Judicator.GetComponent<Animator>().SetBool("is_following", true);
 
         // get animator of the bars and play unlocking animation
 
