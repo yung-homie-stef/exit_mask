@@ -6,14 +6,19 @@ public class Wheels : MonoBehaviour
 {
     private Animator _animator;
     private IEnumerator unAlertCoroutine;
-    public float rayDist = 25;
+    private float staticTimer;
+    private bool timerStarted;
 
+    public float rayDist = 25;
     public bool rayHasHit;
     public GameObject[] cowls;
+    public GameObject staticCanvas;
 
     // Start is called before the first frame update
     void Start()
     {
+        timerStarted = false;
+        staticTimer = 4.0f;
         rayHasHit = false;
         _animator = gameObject.GetComponent<Animator>();
         unAlertCoroutine = SetAlertToFalse(5.0f);
@@ -46,8 +51,21 @@ public class Wheels : MonoBehaviour
 
         if (rayHasHit == true) // replace this with raycast logic
         {
+            timerStarted = true;
             rayHasHit = false;
-            gameObject.GetComponent<alertImages>().SelectRandomCanvas(0, 4);
+        }
+
+        if (timerStarted == true)
+        {
+            staticTimer -= Time.deltaTime;
+            staticCanvas.SetActive(true);
+
+            if (staticTimer <= 0)
+            {
+                timerStarted = false;
+                staticCanvas.SetActive(false);
+                staticTimer = 4.0f;
+            }
         }
 
 
