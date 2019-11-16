@@ -12,6 +12,7 @@ public class unnamedIncubatorObjective : MonoBehaviour
     public GameObject[] prisonBars;
     public GameObject[] prisonGates;
     public GameObject Exit;
+    public GameObject flyScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -48,15 +49,18 @@ public class unnamedIncubatorObjective : MonoBehaviour
         Judicator.GetComponent<Judicator>().isFollowing = true;
         Judicator.GetComponent<Animator>().SetBool("is_following", true);
 
-        // get animator of the bars and play unlocking animation
+        //activate fly screens
+        flyScreen.SetActive(true);
 
         Exit.GetComponent<wombExit>().DecrementBloodCount();
 
+        // get animator of the bars and play locking animation
         for (int i =0; i < prisonGates.Length; i++)
         {
             prisonGates[i].SetActive(true);
         }
 
+        // get animator of the bars and play unlocking animation
         for (int i = 0; i < prisonBars.Length; i++)
         {
             prisonBars[i].GetComponent<Animator>().SetBool("is_unlocked", true);
