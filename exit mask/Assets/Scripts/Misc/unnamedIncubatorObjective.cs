@@ -7,8 +7,11 @@ public class unnamedIncubatorObjective : MonoBehaviour
     private BoxCollider _collider;
     private bool unlockingAllowed = false;
     private IEnumerator prisonCoroutine;
+    private Transform newRespawnPosition;
 
     public GameObject Judicator;
+    public GameObject Player;
+
     public GameObject[] prisonBars;
     public GameObject[] prisonGates;
     public GameObject Exit;
@@ -54,20 +57,30 @@ public class unnamedIncubatorObjective : MonoBehaviour
 
         Exit.GetComponent<wombExit>().DecrementBloodCount();
 
+        #region Respawning
+        // set the respawn position to the position of the player when they unlock a Judicator
+        Player.GetComponent<Death>().playerRespawnPoint.position = Player.transform.position;
+        int firstEmpty = System.Array.IndexOf(Player.GetComponent<objectiveBasedRespawning>().unlockedTranfusionMachines, null);
+        Debug.Log(firstEmpty);
+        Player.GetComponent<objectiveBasedRespawning>().unlockedTranfusionMachines[firstEmpty] = this.gameObject;
+        #endregion
+
+        #region Prison
+        // get animator of the bars and play unlocking animation
+        for (int i = 0; i < prisonBars.Length; i++)
+        {
+            prisonBars[i].GetComponent<Animator>().SetBool("is_unlocked", true);
+        }
         // get animator of the bars and play locking animation
         for (int i =0; i < prisonGates.Length; i++)
         {
             prisonGates[i].SetActive(true);
         }
 
-        // get animator of the bars and play unlocking animation
-        for (int i = 0; i < prisonBars.Length; i++)
-        {
-            prisonBars[i].GetComponent<Animator>().SetBool("is_unlocked", true);
-        }
 
         StartCoroutine(prisonCoroutine);
         this.enabled = false;
+        #endregion
     }
 
     private IEnumerator DestroyPrisonBars(float waitTime)
@@ -75,7 +88,7 @@ public class unnamedIncubatorObjective : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         for (int i = 0; i < prisonBars.Length; i++)
         {
-            Destroy(prisonBars[i]);
+            prisonBars[i].SetActive(false);
         }
     }
 }
