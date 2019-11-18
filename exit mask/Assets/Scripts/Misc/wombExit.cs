@@ -23,7 +23,6 @@ public class wombExit : MonoBehaviour
     {
         if (bloodCount == 0)
         {
-            Debug.Log("zero");
             _animator.SetBool("open_door", true);
             exitTipTrigger.SetActive(true);
         }
@@ -32,13 +31,25 @@ public class wombExit : MonoBehaviour
     public void DecrementBloodCount()
     {
         bloodCount--;
-        ActivateGIF(bloodCount);
         Debug.Log(bloodCount);
+        ActivateGIF(bloodCount);
+    }
+
+    public void IncrementBloodCount()
+    {
+        bloodCount+=1;
+        Debug.Log(bloodCount);
+        DeactivateGIF(bloodCount-1);
     }
 
     void ActivateGIF(int index)
     {
         wombSprites[index].SetActive(true);
+    }
+
+    void DeactivateGIF(int index)
+    {
+        wombSprites[index].SetActive(false);
     }
 
     public int GetBloodCount()

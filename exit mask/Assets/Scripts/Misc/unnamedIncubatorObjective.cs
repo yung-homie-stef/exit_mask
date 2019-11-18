@@ -8,6 +8,7 @@ public class unnamedIncubatorObjective : MonoBehaviour
     private bool unlockingAllowed = false;
     private IEnumerator prisonCoroutine;
     private Transform newRespawnPosition;
+    private bool canIncrement = true;
 
     public GameObject Judicator;
     public GameObject Player;
@@ -16,6 +17,7 @@ public class unnamedIncubatorObjective : MonoBehaviour
     public GameObject[] prisonGates;
     public GameObject Exit;
     public GameObject flyScreen;
+
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +50,8 @@ public class unnamedIncubatorObjective : MonoBehaviour
 
     private void Unlock()
     {
+        canIncrement = true;
+
         // activate the chasing capabilities of the judicator
         Judicator.GetComponent<Judicator>().isFollowing = true;
         Judicator.GetComponent<Animator>().SetBool("is_following", true);
@@ -59,26 +63,29 @@ public class unnamedIncubatorObjective : MonoBehaviour
 
         #region Respawning
         // set the respawn position to the position of the player when they unlock a Judicator
-        Player.GetComponent<Death>().playerRespawnPoint.position = Player.transform.position;
-        int firstEmpty = System.Array.IndexOf(Player.GetComponent<objectiveBasedRespawning>().unlockedTranfusionMachines, null);
-        Debug.Log(firstEmpty);
-        Player.GetComponent<objectiveBasedRespawning>().unlockedTranfusionMachines[firstEmpty] = this.gameObject;
+        newRespawnPosition = Player.transform;
+        Player.GetComponent<Death>().playerRespawnPoint.position = newRespawnPosition.position;
+        Player.GetComponent<objectiveBasedRespawning>().machinesList.Add(this.gameObject);
+        Debug.Log(Player.GetComponent<objectiveBasedRespawning>().machinesList.Count);
         #endregion
 
         #region Prison
         // get animator of the bars and play unlocking animation
         for (int i = 0; i < prisonBars.Length; i++)
         {
-            prisonBars[i].GetComponent<Animator>().SetBool("is_unlocked", true);
+            if (prisonBars[i].GetComponent<Animator>().GetBool("is_unlocked") == false)
+            {
+                prisonBars[i].GetComponent<Animator>().SetBool("is_unlocked", true);
+                prisonBars[i].GetComponent<Animator>().SetBool("is_locked", false);
+            }
         }
+
         // get animator of the bars and play locking animation
         for (int i =0; i < prisonGates.Length; i++)
         {
             prisonGates[i].SetActive(true);
         }
 
-
-        StartCoroutine(prisonCoroutine);
         this.enabled = false;
         #endregion
     }
@@ -89,6 +96,35 @@ public class unnamedIncubatorObjective : MonoBehaviour
         for (int i = 0; i < prisonBars.Length; i++)
         {
             prisonBars[i].SetActive(false);
+        }
+    }
+
+    public void ResetJudicatorStatus()
+    {
+
+        // get animator of the bars and play locking animation
+        for (int i = 0; i < prisonBars.Length; i++)
+        {
+            prisonBars[i].GetComponent<Animator>().SetBool("is_locked", true);
+            prisonBars[i].GetComponent<Animator>().SetBool("is_unlocked", false);
+        }
+
+        // get animator of the bars and play locking animation
+        for (int i = 0; i < prisonGates.Length; i++)
+        {
+            prisonGates[i].SetActive(false);
+        }
+
+        // put the judicator back in the cage and turn off the fly screen
+        Judicator.GetComponent<Judicator>().isFollowing = false;
+        Judicator.GetComponent<Animator>().SetBool("is_following", false);
+        flyScreen.SetActive(false);
+        this.enabled = true;
+
+        if (canIncrement == true)
+        {
+            Exit.GetComponent<wombExit>().IncrementBloodCount();
+            canIncrement = false;
         }
     }
 }

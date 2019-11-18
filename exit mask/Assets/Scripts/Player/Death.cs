@@ -8,7 +8,6 @@ public class Death : MonoBehaviour
     private Animator _animator;
     private Animator _fadeAnimator;
     private float deathTime;
-    private bool deathTimerStarted;
     private GameObject[] cowls;
     private GameObject[] wheels;
 
@@ -16,6 +15,7 @@ public class Death : MonoBehaviour
     public Camera playerCamera;
     public GameObject deathFader;
     public float killVolume;
+    public bool deathTimerStarted;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,7 @@ public class Death : MonoBehaviour
         _fadeAnimator = deathFader.GetComponent<Animator>();
         deathTime = 3.0f;
         deathTimerStarted = false;
+        isInWomb = false;
     }
 
     private void Update()
@@ -65,6 +66,7 @@ public class Death : MonoBehaviour
         ResetAIBehaviour();
 
         deathTimerStarted = true; // start death timer, making the player respawn after it has reached 0
+
     }
 
 
