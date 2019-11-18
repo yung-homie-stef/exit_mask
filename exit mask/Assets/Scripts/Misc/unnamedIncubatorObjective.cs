@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class unnamedIncubatorObjective : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class unnamedIncubatorObjective : MonoBehaviour
     private IEnumerator prisonCoroutine;
     private Transform newRespawnPosition;
     private bool canIncrement = true;
+    private GameObject[] judicators;
 
     public GameObject Judicator;
     public GameObject Player;
@@ -17,6 +19,7 @@ public class unnamedIncubatorObjective : MonoBehaviour
     public GameObject[] prisonGates;
     public GameObject Exit;
     public GameObject flyScreen;
+    public Transform judicatorTransform;
 
 
     // Start is called before the first frame update
@@ -118,7 +121,15 @@ public class unnamedIncubatorObjective : MonoBehaviour
         // put the judicator back in the cage and turn off the fly screen
         Judicator.GetComponent<Judicator>().isFollowing = false;
         Judicator.GetComponent<Animator>().SetBool("is_following", false);
-        
+
+        judicators = GameObject.FindGameObjectsWithTag("Judicator_Enemy");
+
+        foreach (GameObject jude in judicators)
+        {
+            jude.transform.position = jude.GetComponent<Judicator>().judicatorTransform.position;
+            jude.GetComponent<NavMeshAgent>().ResetPath();
+        }
+
         flyScreen.SetActive(false);
         this.enabled = true;
 

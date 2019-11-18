@@ -9,6 +9,7 @@ public class Judicator : MonoBehaviour
     public bool isFollowing;
 
     public GameObject Player;
+    public Transform judicatorTransform;
 
     private void Start()
     {
@@ -26,4 +27,5 @@ public class Judicator : MonoBehaviour
             _agent.SetDestination(newPosition);
         }
     }
+
 }

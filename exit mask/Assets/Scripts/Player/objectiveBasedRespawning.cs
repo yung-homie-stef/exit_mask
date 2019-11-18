@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class objectiveBasedRespawning : MonoBehaviour
 {
     private GameObject Player;
-    public bool beginResetting;
 
     public List<GameObject> machinesList = new List<GameObject>();
     public GameObject firstSpawn;
@@ -13,7 +13,6 @@ public class objectiveBasedRespawning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        beginResetting = false;
         machinesList.Add(firstSpawn);
         Player = this.gameObject;
     }
@@ -28,6 +27,8 @@ public class objectiveBasedRespawning : MonoBehaviour
             if (machinesList.Count > 1)
             {
                 machinesList[machinesList.Count - 1].GetComponent<unnamedIncubatorObjective>().ResetJudicatorStatus();
+
+             
             }
 
                 
