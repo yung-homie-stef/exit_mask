@@ -118,6 +118,7 @@ public class unnamedIncubatorObjective : MonoBehaviour
         // put the judicator back in the cage and turn off the fly screen
         Judicator.GetComponent<Judicator>().isFollowing = false;
         Judicator.GetComponent<Animator>().SetBool("is_following", false);
+        
         flyScreen.SetActive(false);
         this.enabled = true;
 

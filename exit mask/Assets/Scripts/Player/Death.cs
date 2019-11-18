@@ -24,7 +24,6 @@ public class Death : MonoBehaviour
         _fadeAnimator = deathFader.GetComponent<Animator>();
         deathTime = 3.0f;
         deathTimerStarted = false;
-        isInWomb = false;
     }
 
     private void Update()
