@@ -55,6 +55,8 @@ public class unnamedIncubatorObjective : MonoBehaviour
     {
         canIncrement = true;
 
+        FindObjectOfType<audioManager>().Play("Heart_Machine");
+
         // activate the chasing capabilities of the judicator
         Judicator.GetComponent<Judicator>().isFollowing = true;
         Judicator.GetComponent<Animator>().SetBool("is_following", true);

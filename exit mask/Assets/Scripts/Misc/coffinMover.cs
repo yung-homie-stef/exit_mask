@@ -22,6 +22,7 @@ public class coffinMover : MonoBehaviour
             Coffin.transform.position = nextPoint.transform.position;
             // makes sure the coffin cannot be triggered again and have its position brough back
             _collider.enabled = false;
+            FindObjectOfType<audioManager>().Play("Coffin_Ping");
         }
     }
 }
