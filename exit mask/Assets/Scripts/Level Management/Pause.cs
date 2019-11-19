@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class Pause : MonoBehaviour
 {
     public static bool isPaused = false;
     public GameObject pauseMenu;
+
+    private void Start()
+    {
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -17,12 +23,14 @@ public class Pause : MonoBehaviour
             if (isPaused)
             {
                 ResumeGame();
+                AudioListener.pause = false;
             }
             else
             {
                 PauseGame();
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                AudioListener.pause = true;
             }
         }
     }

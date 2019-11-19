@@ -83,6 +83,6 @@ public class specialComputer : MonoBehaviour
         yield return new WaitForSeconds(waitTime); // wait for the alotted time, set the hack flag to false and disable this script
         _playerAnimator.SetBool("can_hack", false);
         terminalScreens.SetActive(true);
-        FindObjectOfType<audioManager>().Play("Computer_Boot_Up");
+        FindObjectOfType<audioManager>().Play("Pickup");
     }
 }
