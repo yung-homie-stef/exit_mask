@@ -36,12 +36,12 @@ public class audioManager : MonoBehaviour
     {
         // for any continuous sounds (music), just call the play method in start
         // and play it from there
-         Play("Theme");
+         //Play("Theme");
     }
 
     public void Play(string name)
     {
-       Sound s = Array.Find(sounds, sound => sound.name == name);
+       Sound s = Array.Find(sounds, sound => sound.clip.name == name);
 
         if (s == null) // debugging
         {
