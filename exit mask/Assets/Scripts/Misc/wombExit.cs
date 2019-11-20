@@ -7,6 +7,7 @@ public class wombExit : MonoBehaviour
     public static int bloodCount;
     public GameObject[] wombSprites;
     public GameObject exitTipTrigger;
+    public GameObject coffin;
 
     private Animator _animator;
 
@@ -25,6 +26,7 @@ public class wombExit : MonoBehaviour
         {
             _animator.SetBool("open_door", true);
             exitTipTrigger.SetActive(true);
+            coffin.SetActive(true);
         }
     }
 

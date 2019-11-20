@@ -11,6 +11,8 @@ public class unnamedIncubatorObjective : MonoBehaviour
     private Transform newRespawnPosition;
     private bool canIncrement = true;
     private GameObject[] judicators;
+    private bool isDead = false;
+    private float judicatorRepositioningTimer = 3.0f;
 
     public GameObject Judicator;
     public GameObject Player;
@@ -35,6 +37,21 @@ public class unnamedIncubatorObjective : MonoBehaviour
         if(unlockingAllowed && Input.GetKeyDown(KeyCode.E))
         {
             Unlock();
+        }
+
+        if (isDead)
+            judicatorRepositioningTimer -= Time.deltaTime;
+
+        if (judicatorRepositioningTimer <= 0)
+        {
+            foreach (GameObject jude in judicators)
+            {
+                jude.transform.position = jude.GetComponent<Judicator>().judicatorTransform.position;
+                jude.GetComponent<NavMeshAgent>().ResetPath();
+            }
+
+            judicatorRepositioningTimer = 3.0f;
+            isDead = false;
         }
     }
 
@@ -126,11 +143,7 @@ public class unnamedIncubatorObjective : MonoBehaviour
 
         judicators = GameObject.FindGameObjectsWithTag("Judicator_Enemy");
 
-        foreach (GameObject jude in judicators)
-        {
-            jude.transform.position = jude.GetComponent<Judicator>().judicatorTransform.position;
-            jude.GetComponent<NavMeshAgent>().ResetPath();
-        }
+        isDead = true;
 
         flyScreen.SetActive(false);
         this.enabled = true;

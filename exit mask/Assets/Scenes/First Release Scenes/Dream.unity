@@ -1489,6 +1489,11 @@ PrefabInstance:
       propertyPath: minHeadRotation
       value: -27.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1974595153003425288, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: antialiasingMode
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f10c9e3925541774ab6cbff3c6b21a28, type: 3}
 --- !u!1 &532985636
@@ -6497,7 +6502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1756956859
 MonoBehaviour:
   m_ObjectHideFlags: 0
