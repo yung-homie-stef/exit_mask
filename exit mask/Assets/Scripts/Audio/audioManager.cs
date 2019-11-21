@@ -28,15 +28,14 @@ public class audioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            s.source.ignoreListenerPause = s.ignorePause;
         }
     }
 
 
     private void Start()
     {
-        // for any continuous sounds (music), just call the play method in start
-        // and play it from there
-         //Play("Theme");
+      
     }
 
     public void Play(string name)

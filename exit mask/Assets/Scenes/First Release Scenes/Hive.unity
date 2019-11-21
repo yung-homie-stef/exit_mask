@@ -2766,18 +2766,21 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: a8f14c695ff960f4a9d192f3bbd7d6dd, type: 3}
     name: Flesh_Rip
     loop: 0
+    ignorePause: 0
     volume: 0.926
     pitch: 1.29
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: d8be9e63344538a438c8e0b1c46f8e97, type: 3}
     name: Theme
     loop: 1
+    ignorePause: 0
     volume: 0.315
     pitch: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 67f2a8f6446c6f3418ba862cd4cd2414, type: 3}
     name: Self_Harm_Static
     loop: 0
+    ignorePause: 0
     volume: 0.25
     pitch: 1
     source: {fileID: 0}
@@ -7634,6 +7637,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495166001650382210, guid: 1097ddc80c30d684089ec12da7a62df1,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495166001650382210, guid: 1097ddc80c30d684089ec12da7a62df1,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495166001650382210, guid: 1097ddc80c30d684089ec12da7a62df1,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495166001650382210, guid: 1097ddc80c30d684089ec12da7a62df1,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1097ddc80c30d684089ec12da7a62df1, type: 3}
@@ -13626,6 +13649,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Hive
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970633103087579866, guid: 2ecba05b928c2d04abb3da5a2055026f,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970633103087579866, guid: 2ecba05b928c2d04abb3da5a2055026f,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970633103087579866, guid: 2ecba05b928c2d04abb3da5a2055026f,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970633103087579866, guid: 2ecba05b928c2d04abb3da5a2055026f,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ecba05b928c2d04abb3da5a2055026f, type: 3}

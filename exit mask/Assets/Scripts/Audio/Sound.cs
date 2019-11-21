@@ -8,6 +8,7 @@ public class Sound
     public AudioClip clip;
     public string name;
     public bool loop;
+    public bool ignorePause;
   
     [Range(0f, 1f)]
     public float volume;
