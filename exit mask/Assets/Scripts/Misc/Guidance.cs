@@ -14,6 +14,7 @@ public class Guidance : MonoBehaviour
     private bool activatingAllowed;
     private bool activateImage;
     private float distanceBetween;
+    private Transform newRespawnPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +59,9 @@ public class Guidance : MonoBehaviour
     private void Activate()
     {
         Wires.SetActive(true);
+        newRespawnPosition = Player.transform;
+        Player.GetComponent<Death>().playerRespawnPoint.position = newRespawnPosition.position;
+
         Destroy(hintImage);
     }
 }
