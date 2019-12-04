@@ -9451,6 +9451,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: box_cutter
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: e4acea3903e81f047b8dceca8c6a7ec1,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: e4acea3903e81f047b8dceca8c6a7ec1,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a368a397a48c8b642bfba12551eeacf4, type: 2}
     - target: {fileID: -4216859302048453862, guid: e4acea3903e81f047b8dceca8c6a7ec1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9536,16 +9546,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.30788463
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: e4acea3903e81f047b8dceca8c6a7ec1,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: e4acea3903e81f047b8dceca8c6a7ec1,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: a368a397a48c8b642bfba12551eeacf4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4acea3903e81f047b8dceca8c6a7ec1, type: 3}
 --- !u!1 &785384855
@@ -11645,7 +11645,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 9098524dfc9c6864383ad53e12d19cc6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.354744
+      value: 24.433
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9098524dfc9c6864383ad53e12d19cc6,
         type: 3}
@@ -27220,6 +27220,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 1974595153003425293, guid: f10c9e3925541774ab6cbff3c6b21a28,
+        type: 3}
+      propertyPath: field of view
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 7513911566957615269, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
       propertyPath: m_IsActive
@@ -27229,11 +27234,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Weapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974595153003425293, guid: f10c9e3925541774ab6cbff3c6b21a28,
-        type: 3}
-      propertyPath: field of view
-      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 6781751550170984628, guid: f10c9e3925541774ab6cbff3c6b21a28,
         type: 3}
