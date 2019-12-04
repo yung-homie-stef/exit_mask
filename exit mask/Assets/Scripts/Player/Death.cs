@@ -57,7 +57,7 @@ public class Death : MonoBehaviour
         // restrict them from moving themselves or camera
         _animator.SetBool("is_dead", true);
         _fadeAnimator.SetBool("has_died", true);
-        //FindObjectOfType<audioManager>().Play("Death");
+        FindObjectOfType<audioManager>().Play("death");
 
         gameObject.GetComponent<characterController>().enabled = false;
         playerCamera.GetComponent<CameraController>().is_dead = true;

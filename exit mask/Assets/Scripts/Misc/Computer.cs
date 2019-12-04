@@ -67,7 +67,7 @@ public class Computer : MonoBehaviour
         _animator.SetBool("can_hack", false);
         Exit.GetComponent<mazeExit>().DecrementPCCount();
         terminalScreens.SetActive(true);
-        FindObjectOfType<audioManager>().Play("Computer_Boot_Up");
+        FindObjectOfType<audioManager>().Play("computer_boot_up");
 
         enabled = false;
     }

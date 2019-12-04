@@ -19,7 +19,7 @@ public class fleshWall : MonoBehaviour
     {
         _collider.enabled = false;
         _animator.SetBool("is_cut", true);
-        FindObjectOfType<audioManager>().Play("Flesh_Rip");
+        FindObjectOfType<audioManager>().Play("flesh_rip");
     }
 
 }
