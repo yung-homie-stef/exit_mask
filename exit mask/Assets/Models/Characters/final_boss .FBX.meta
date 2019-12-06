@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-guid: bcbf10b0316a51848a30baf74e9f3761
+guid: 7fea7fa64ae21a24aa0f0f64c718d1b5
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: death
+    second: centipede_idle
+  - first:
+      74: 3840993948008381031
+    second: centipede_death
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -35,9 +38,38 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: death
+      name: centipede_idle
       takeName: Take 001
       internalID: 1827226128182048838
+      firstFrame: 130
+      lastFrame: 190
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: centipede_death
+      takeName: Take 001
+      internalID: 3840993948008381031
       firstFrame: 60
       lastFrame: 100
       wrapMode: 0
