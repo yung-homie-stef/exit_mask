@@ -9,6 +9,7 @@ public class Pause : MonoBehaviour
 {
     public static bool isPaused = false;
     public GameObject pauseMenu;
+    public GameObject settingsMenu;
 
     private void Start()
     {
@@ -20,7 +21,7 @@ public class Pause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (isPaused && settingsMenu.activeSelf == false)
             {
                 ResumeGame();
                 AudioListener.pause = false;
