@@ -20,7 +20,8 @@ public class loadingScreen : MonoBehaviour
     {
         string theme_name = theme.clip.name;
         _animator = image.GetComponent<Animator>();
-        FindObjectOfType<audioManager>().Play(theme_name);
+
+       FindObjectOfType<audioManager>().Play(theme_name);
     }
 
     private void Update()
