@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FinalBoss : MonoBehaviour
 {
+    public Animator textAnimator;
+
     private Animator _animator;
     private IEnumerator centipedeCoroutine;
 
@@ -26,6 +28,7 @@ public class FinalBoss : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         _animator.SetBool("is_killed", true);
+        textAnimator.SetBool("picked_up", true);
         //play death sound 
     }
 }
