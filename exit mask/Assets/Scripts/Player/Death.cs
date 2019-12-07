@@ -89,6 +89,10 @@ public class Death : MonoBehaviour
     private void UpdatePlayerRespawnPoint(Transform tf)
     {
         playerRespawnPoint.position = tf.position;
+
+        // save the game as well
+        SaveSystem.Save(this.gameObject.GetComponent<characterController>());
+        
     }
 
     private void ResetAIBehaviour()
