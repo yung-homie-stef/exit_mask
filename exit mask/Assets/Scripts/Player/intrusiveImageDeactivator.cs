@@ -74,7 +74,6 @@ public class intrusiveImageDeactivator : MonoBehaviour
         if (activeTimerSet == true) // when the image is active, start counting down till you hit 0. at 0, disable the gif
         {
             imageActiveTimer -= Time.deltaTime;
-            Debug.Log(imageActiveTimer);
 
             if (imageActiveTimer < 0)
             {
@@ -86,7 +85,6 @@ public class intrusiveImageDeactivator : MonoBehaviour
         else if (activeTimerSet == false && disabledTimerSet == true) // when disabled, start coutning down until it is active again
         {
             imageDisabledTimer -= Time.deltaTime;
-            Debug.Log(imageDisabledTimer);
             
             if (imageDisabledTimer < 0)
             {

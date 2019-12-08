@@ -27,7 +27,6 @@ public class importantCollectible : MonoBehaviour
     
     private void Update()
     {
-        Debug.Log(transitionTimer);
 
         if (pickUpAllowed == true && Input.GetKeyDown(KeyCode.E))
         {

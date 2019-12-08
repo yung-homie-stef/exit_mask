@@ -5,42 +5,40 @@ using UnityEngine.UI;
 
 public class Guidance : MonoBehaviour
 {
-    public GameObject hintImage;
+    public Image hintImage;
     public GameObject Player;
     public GameObject Wires;
     public float minimumDistance;
-        
-    private Color imageColour;
+
     private bool activatingAllowed;
-    private bool activateImage;
+    private Color tempColor;
+
     private float distanceBetween;
     private Transform newRespawnPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        imageColour = hintImage.GetComponent<Image>().color;
+        tempColor = hintImage.color;
     }
 
     // Update is called once per frame
     void Update()
     {
         distanceBetween = Vector3.Distance(Player.transform.position, gameObject.transform.position);
+        //Debug.Log(distanceBetween);
 
         if (distanceBetween < minimumDistance)
         {
-            hintImage.SetActive(true);
+            tempColor.a = Mathf.InverseLerp(minimumDistance, 0.0f, distanceBetween);
+            hintImage.color = tempColor;
         }
-        else
-            hintImage.SetActive(false);
 
         if (activatingAllowed && Input.GetKeyDown(KeyCode.E))
         {
+            Wires.SetActive(true);
             Activate();
         }
-
-        if (activateImage)
-            hintImage.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -58,7 +56,7 @@ public class Guidance : MonoBehaviour
 
     private void Activate()
     {
-        Wires.SetActive(true);
+        
         newRespawnPosition = Player.transform;
         Player.GetComponent<Death>().playerRespawnPoint.position = newRespawnPosition.position;
 

@@ -85,7 +85,6 @@ public class deepMachine : MonoBehaviour
         newRespawnPosition = Player.transform;
         Player.GetComponent<Death>().playerRespawnPoint.position = newRespawnPosition.position;
         Player.GetComponent<objectiveBasedRespawning_2>().machinesList.Add(this.gameObject);
-        Debug.Log(Player.GetComponent<objectiveBasedRespawning_2>().machinesList.Count);
         #endregion
 
         #region Prison

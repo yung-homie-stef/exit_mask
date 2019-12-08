@@ -88,7 +88,6 @@ public class unnamedIncubatorObjective : MonoBehaviour
         newRespawnPosition = Player.transform;
         Player.GetComponent<Death>().playerRespawnPoint.position = newRespawnPosition.position;
         Player.GetComponent<objectiveBasedRespawning>().machinesList.Add(this.gameObject);
-        Debug.Log(Player.GetComponent<objectiveBasedRespawning>().machinesList.Count);
         #endregion
 
         #region Prison

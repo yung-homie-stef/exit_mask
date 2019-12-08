@@ -22,7 +22,6 @@ public class objectiveBasedRespawning : MonoBehaviour
     {
         if (gameObject.GetComponent<Death>().deathTimerStarted == true)
         { 
-            Debug.Log("lmao u died");
             // to ensure this only happens once at least one transfusion machine is active
             if (machinesList.Count > 1)
             {

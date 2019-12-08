@@ -36,7 +36,6 @@ public class weaponLogic : MonoBehaviour
         // 
         if (other.gameObject.tag == "Fume_Enemy")
         {
-            Debug.Log("you are hitting a fume");
         }
 
         //TODO: Add actual damage logic
