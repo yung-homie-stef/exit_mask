@@ -4,8 +4,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
+    public static bool hasSaveFile = false;
+
     public static void Save(characterController charController)
     {
+        hasSaveFile = true;
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/exit_mask.save";
         FileStream stream = new FileStream(path, FileMode.Create);
@@ -30,7 +33,6 @@ public static class SaveSystem
         }
         else
         {
-            Debug.Log("uh oh stinky");
             return null;
         }
     }

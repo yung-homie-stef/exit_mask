@@ -6,6 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public GameObject loadButton;
+
+    private void Update()
+    {
+        if (SaveSystem.hasSaveFile == true)
+        {
+            loadButton.SetActive(true);
+        }
+        else
+            loadButton.SetActive(false);
+    }
+
+
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
