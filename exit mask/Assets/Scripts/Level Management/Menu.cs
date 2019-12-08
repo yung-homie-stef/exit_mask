@@ -34,6 +34,12 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Scenes/First Release Scenes/Start");
     }
 
+    public void GoBackToMainMenuAfterEnd()
+    {
+        SaveSystem.hasSaveFile = false;
+        SceneManager.LoadScene("Scenes/First Release Scenes/Start");
+    }
+
     public void Load()
     {
         PlayerData data = SaveSystem.LoadData();
