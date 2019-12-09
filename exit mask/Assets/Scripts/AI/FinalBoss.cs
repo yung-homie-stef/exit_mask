@@ -24,12 +24,14 @@ public class FinalBoss : MonoBehaviour
         fadeScreen = BeginFadingScreen(10.0f);
         timerRunning = false;
 
+        // music for this level stems from this gameobject
         FindObjectOfType<audioManager>().Play("theme_reversed");
         FindObjectOfType<audioManager>().Stop("theme_3");
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        // kill boss when the weapon enters his trigger box
         if (other.gameObject.tag == "Weapon")
         {
             StartCoroutine(centipedeCoroutine);

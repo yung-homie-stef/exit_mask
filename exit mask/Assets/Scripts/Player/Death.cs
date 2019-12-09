@@ -43,7 +43,8 @@ public class Death : MonoBehaviour
         if (other.tag == "Respawn_Point")
         {
             BoxCollider boxcol = other.GetComponent<BoxCollider>();
-            boxcol.enabled = false; // disable the trigger so that this respawn point can never be reactivated
+            // disable the trigger so that this respawn point can never be reactivated
+            boxcol.enabled = false; 
 
             Transform newRespawnTransform = other.transform;
             UpdatePlayerRespawnPoint(newRespawnTransform);
@@ -64,7 +65,8 @@ public class Death : MonoBehaviour
 
         ResetAIBehaviour();
 
-        deathTimerStarted = true; // start death timer, making the player respawn after it has reached 0
+        // start death timer, making the player respawn after it has reached 0
+        deathTimerStarted = true; 
 
     }
 
@@ -102,7 +104,7 @@ public class Death : MonoBehaviour
 
         foreach (GameObject cowl in cowls)
         {
-            // reset all flags in Cowled enemies animator
+            // reset all flags in cowled enemies animator
             cowl.GetComponent<Animator>().SetBool("is_aware", false);
             cowl.GetComponent<Animator>().SetBool("is_chasing", false);
             cowl.GetComponent<NavMeshAgent>().speed = 0.5f;
