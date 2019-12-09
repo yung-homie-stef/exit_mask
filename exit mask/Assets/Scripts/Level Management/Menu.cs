@@ -10,6 +10,9 @@ public class Menu : MonoBehaviour
 
     private void Update()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         if (SaveSystem.hasSaveFile == true)
         {
             loadButton.SetActive(true);

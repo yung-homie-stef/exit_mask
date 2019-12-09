@@ -23,6 +23,9 @@ public class FinalBoss : MonoBehaviour
         centipedeCoroutine = Kill(0.25f);
         fadeScreen = BeginFadingScreen(10.0f);
         timerRunning = false;
+
+        FindObjectOfType<audioManager>().Play("theme_reversed");
+        //FindObjectOfType<audioManager>().Stop("theme_3");
     }
 
     private void OnTriggerEnter(Collider other)

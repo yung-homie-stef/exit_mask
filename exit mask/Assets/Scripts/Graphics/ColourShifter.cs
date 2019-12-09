@@ -17,6 +17,7 @@ namespace UnityStandardAssets.ImageEffects
         private void OnTriggerEnter(Collider other)
         {
             whiteCamera.SetActive(false);
+            FindObjectOfType<audioManager>().Stop("theme_reversed");
         }
     }
 }
