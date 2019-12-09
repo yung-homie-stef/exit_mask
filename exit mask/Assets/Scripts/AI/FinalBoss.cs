@@ -25,7 +25,7 @@ public class FinalBoss : MonoBehaviour
         timerRunning = false;
 
         FindObjectOfType<audioManager>().Play("theme_reversed");
-        //FindObjectOfType<audioManager>().Stop("theme_3");
+        FindObjectOfType<audioManager>().Stop("theme_3");
     }
 
     private void OnTriggerEnter(Collider other)

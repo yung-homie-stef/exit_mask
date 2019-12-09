@@ -34,11 +34,14 @@ public class Menu : MonoBehaviour
 
     public void GoBackToMainMenu()
     {
+       
         SceneManager.LoadScene("Scenes/First Release Scenes/Start");
+        
     }
 
     public void GoBackToMainMenuAfterEnd()
     {
+        FindObjectOfType<audioManager>().Stop("credits_theme");
         SaveSystem.hasSaveFile = false;
         SceneManager.LoadScene("Scenes/First Release Scenes/Start");
     }

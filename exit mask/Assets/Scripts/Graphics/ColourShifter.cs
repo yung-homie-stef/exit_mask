@@ -18,6 +18,7 @@ namespace UnityStandardAssets.ImageEffects
         {
             whiteCamera.SetActive(false);
             FindObjectOfType<audioManager>().Stop("theme_reversed");
+            FindObjectOfType<audioManager>().Play("harsh_noise_wall");
         }
     }
 }
