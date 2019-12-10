@@ -11,6 +11,7 @@ public class FinalBoss : MonoBehaviour
     private Animator _animator;
     private IEnumerator centipedeCoroutine;
     private IEnumerator fadeScreen;
+    private IEnumerator nothing;
     private bool timerRunning;
     private float timer = 14.0f;
     private Animator _fadeAnimator;
@@ -22,6 +23,7 @@ public class FinalBoss : MonoBehaviour
         _fadeAnimator = levelFader.GetComponent<Animator>();
         centipedeCoroutine = Kill(0.25f);
         fadeScreen = BeginFadingScreen(10.0f);
+        nothing = AccquireNothing(5.0f);
         timerRunning = false;
 
         // music for this level stems from this gameobject
@@ -61,10 +63,10 @@ public class FinalBoss : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         _animator.SetBool("is_killed", true);
-        textAnimator.SetBool("picked_up", true);
         timerRunning = true;
         gameObject.GetComponent<AudioSource>().enabled = false;
         StartCoroutine(fadeScreen);
+        StartCoroutine(nothing);
 
         //play death sound 
     }
@@ -72,6 +74,12 @@ public class FinalBoss : MonoBehaviour
     void LoadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    IEnumerator AccquireNothing(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        textAnimator.SetBool("picked_up", true);
     }
 
 }
