@@ -63,6 +63,7 @@ public class FinalBoss : MonoBehaviour
         _animator.SetBool("is_killed", true);
         textAnimator.SetBool("picked_up", true);
         timerRunning = true;
+        gameObject.GetComponent<AudioSource>().enabled = false;
         StartCoroutine(fadeScreen);
 
         //play death sound 
