@@ -6,6 +6,7 @@ public class Sound
 {
 
     public AudioClip clip;
+    public AudioMixerGroup mixer;
     public string name;
     public bool loop;
     public bool ignorePause;
