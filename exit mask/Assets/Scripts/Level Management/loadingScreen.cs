@@ -14,14 +14,17 @@ public class loadingScreen : MonoBehaviour
     public float fadeTime;
     public float loadTime;
     public Sound theme;
+    public Sound theme_to_stop;
 
     // Start is called before the first frame update
     void Start()
     {
         string theme_name = theme.clip.name;
+        string theme_to_stop_name = theme_to_stop.clip.name;
         _animator = image.GetComponent<Animator>();
 
        FindObjectOfType<audioManager>().Play(theme_name);
+       FindObjectOfType<audioManager>().Stop(theme_to_stop_name);
     }
 
     private void Update()

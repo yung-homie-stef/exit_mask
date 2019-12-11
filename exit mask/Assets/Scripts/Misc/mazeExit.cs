@@ -10,6 +10,7 @@ public class mazeExit : MonoBehaviour
 
     public GameObject[] intrusiveSprites;
     public GameObject exitTipTrigger;
+    public GameObject coffin;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class mazeExit : MonoBehaviour
         { 
             exitTipTrigger.SetActive(true);
             _animator.SetBool("can_exit", true);
+            coffin.SetActive(true);
         }
     }
 

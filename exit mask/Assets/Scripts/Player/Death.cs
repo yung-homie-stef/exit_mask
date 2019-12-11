@@ -92,8 +92,6 @@ public class Death : MonoBehaviour
     {
         playerRespawnPoint.position = tf.position;
 
-        // save the game as well
-        SaveSystem.Save(this.gameObject.GetComponent<characterController>());
         
     }
 

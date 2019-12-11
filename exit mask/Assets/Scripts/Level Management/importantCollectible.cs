@@ -31,7 +31,7 @@ public class importantCollectible : MonoBehaviour
         if (pickUpAllowed == true && Input.GetKeyDown(KeyCode.E))
         {
             transitionStarted = true;
-            FindObjectOfType<audioManager>().Play("Pickup");
+            FindObjectOfType<audioManager>().Play("pickup");
             StartCoroutine(fadeScreen);
         }
 
