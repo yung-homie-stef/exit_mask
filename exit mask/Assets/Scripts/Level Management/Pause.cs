@@ -11,11 +11,6 @@ public class Pause : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject settingsMenu;
 
-    private void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -58,6 +53,7 @@ public class Pause : MonoBehaviour
         SceneManager.LoadScene("Start");
         Time.timeScale = 1.0f;
         isPaused = false;
+        FindObjectOfType<audioManager>().StopAllSounds();
     }
 
     public void Quit()

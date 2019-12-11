@@ -51,6 +51,28 @@ public class Menu : MonoBehaviour
 
             SaveObject saveObject = JsonUtility.FromJson<SaveObject>(savestring);
 
+            if (saveObject.currentSceneName == "Dream" || saveObject.currentSceneName == "Basement" ||
+                saveObject.currentSceneName == "Maze" || saveObject.currentSceneName == "Hive" ||
+                saveObject.currentSceneName == "Needle")
+            {
+                FindObjectOfType<audioManager>().Play("theme");
+            }
+
+            else if (saveObject.currentSceneName == "Towers" || saveObject.currentSceneName == "Incubator" ||
+                saveObject.currentSceneName == "Helix" || saveObject.currentSceneName == "Root")
+            {
+                FindObjectOfType<audioManager>().Play("theme_2");
+            }
+
+            else if (saveObject.currentSceneName == "Dark" || saveObject.currentSceneName == "Coil")
+            {
+                FindObjectOfType<audioManager>().Play("theme_3");
+            }
+
+            else if (saveObject.currentSceneName == "Home")
+            {
+                FindObjectOfType<audioManager>().Play("theme_reversed");
+            }
 
             SceneManager.LoadScene(saveObject.currentSceneName);
 

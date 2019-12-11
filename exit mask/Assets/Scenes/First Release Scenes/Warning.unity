@@ -532,11 +532,21 @@ MonoBehaviour:
   fadeTime: 6
   loadTime: 10
   theme:
-    clip: {fileID: 8300000, guid: d8be9e63344538a438c8e0b1c46f8e97, type: 3}
+    clip: {fileID: 8300000, guid: cb36032b2cd93da439eac4b82bb97851, type: 3}
+    mixer: {fileID: 0}
     name: theme
     loop: 1
     ignorePause: 0
     volume: 0.559
+    pitch: 0
+    source: {fileID: 0}
+  theme_to_stop:
+    clip: {fileID: 8300000, guid: cb36032b2cd93da439eac4b82bb97851, type: 3}
+    mixer: {fileID: 0}
+    name: 
+    loop: 0
+    ignorePause: 0
+    volume: 0
     pitch: 0
     source: {fileID: 0}
 --- !u!1 &1507569521
