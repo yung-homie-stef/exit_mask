@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
+using System.IO;
 
 public class Death : MonoBehaviour
 {
@@ -48,6 +50,9 @@ public class Death : MonoBehaviour
 
             Transform newRespawnTransform = other.transform;
             UpdatePlayerRespawnPoint(newRespawnTransform);
+
+            Save();
+
         }
             
     }
@@ -92,7 +97,6 @@ public class Death : MonoBehaviour
     {
         playerRespawnPoint.position = tf.position;
 
-        
     }
 
     private void ResetAIBehaviour()
@@ -114,5 +118,21 @@ public class Death : MonoBehaviour
             wheel.GetComponent<Wheels>().rayHasHit = false;
 
         }
+    }
+
+    public void Save()
+    {
+        SaveObject saveObject = new SaveObject
+        {
+            position = this.gameObject.transform.position,
+            currentSceneName = SceneManager.GetActiveScene().name,
+            currentScene = SceneManager.GetActiveScene(),
+
+
+        };
+
+        string json = JsonUtility.ToJson(saveObject);
+        File.WriteAllText(Application.dataPath + "/save.txt", json);
+        Debug.Log("Saved");
     }
 }

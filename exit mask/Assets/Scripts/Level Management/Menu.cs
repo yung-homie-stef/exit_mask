@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class Menu : MonoBehaviour
 {
     public GameObject loadButton;
+    private GameObject player;
 
     private void Update()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        if (File.Exists(Application.dataPath + "/save.txt"))
+        {
+            loadButton.SetActive(true);
+        }
     }
-
 
     public void StartGame()
     {
@@ -37,5 +42,21 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/First Release Scenes/Start");
     }
+
+    public void LoadGame()
+    {
+        if (File.Exists(Application.dataPath + "/save.txt"))
+        {
+            string savestring = File.ReadAllText(Application.dataPath + "/save.txt");
+
+            SaveObject saveObject = JsonUtility.FromJson<SaveObject>(savestring);
+
+
+            SceneManager.LoadScene(saveObject.currentSceneName);
+
+        }
+    }
+        
+    
 
 }
