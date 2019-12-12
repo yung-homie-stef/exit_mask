@@ -109,6 +109,7 @@ public class Death : MonoBehaviour
             // reset all flags in cowled enemies animator
             cowl.GetComponent<Animator>().SetBool("is_aware", false);
             cowl.GetComponent<Animator>().SetBool("is_chasing", false);
+            cowl.GetComponent<Chase>().isStopped = true;
             cowl.GetComponent<NavMeshAgent>().speed = 0.5f;
 
         }

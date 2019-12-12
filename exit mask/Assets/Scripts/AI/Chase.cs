@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Chase : MonoBehaviour
 {
     private NavMeshAgent _agent;
-    private bool isStopped = true;
+    public bool isStopped = true;
     private float stoppedTimer = 4.0f;
 
     public GameObject Player;
@@ -24,17 +24,20 @@ public class Chase : MonoBehaviour
         float distance = Vector3.Distance(transform.position, Player.transform.position);
 
         // if the wheelcast raycast has been hit AND you are too close to a cowled begin chase
-        if (GetComponent<Animator>().GetBool("is_aware") != false)
+        if (GetComponent<Animator>().GetBool("is_aware") == true)
         {
             if (isStopped == true)
             {
                 _agent.isStopped = true;
                 stoppedTimer -= Time.deltaTime;
+
+
                 if (stoppedTimer <= 0)
                 {
-                    isStopped = false;
-                    stoppedTimer = 4;
                     _agent.isStopped = false;
+                    isStopped = false;
+                    stoppedTimer = 4.0f;
+                    
                 }
             }
 
