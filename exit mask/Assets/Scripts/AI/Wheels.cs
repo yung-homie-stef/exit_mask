@@ -14,6 +14,7 @@ public class Wheels : MonoBehaviour
     public bool rayHasHit;
     public GameObject[] cowls;
     public GameObject staticCanvas;
+    public GameObject player;
 
     private LineRenderer line;
     public Transform headPosition;
@@ -25,7 +26,6 @@ public class Wheels : MonoBehaviour
         staticTimer = 4.0f;
         rayHasHit = false;
         _animator = gameObject.GetComponent<Animator>();
-        unAlertCoroutine = SetAlertToFalse(5.0f);
 
         line = GetComponent<LineRenderer>();
         line.startWidth = 0.05f;
@@ -54,13 +54,13 @@ public class Wheels : MonoBehaviour
             {
 
                 Debug.Log("ray has hit");
+                FindObjectOfType<audioManager>().Play("alert_static");
                 
                 foreach (GameObject cowl in cowls)
                 {
                     cowl.GetComponent<Animator>().SetBool("is_aware", true);
                 }
 
-                StartCoroutine(unAlertCoroutine);
                 _animator.SetBool("is_alerted", true);
                 rayHasHit = true;
             }
@@ -76,12 +76,14 @@ public class Wheels : MonoBehaviour
         {
             staticTimer -= Time.deltaTime;
             staticCanvas.SetActive(true);
+            player.GetComponent<characterController>().speed = 2;
 
             if (staticTimer <= 0)
             {
                 timerStarted = false;
                 staticCanvas.SetActive(false);
                 staticTimer = 4.0f;
+                player.GetComponent<characterController>().speed = 5;
             }
         }
 
@@ -89,9 +91,8 @@ public class Wheels : MonoBehaviour
         line.SetPosition(1, (headPosition.position + transform.forward * rayDist));
     }
 
-    private IEnumerator SetAlertToFalse(float waitTime)
+    public void SetAlertToFalse()
     {
-        yield return new WaitForSeconds(waitTime);
         _animator.SetBool("is_alerted", false);
 
     }

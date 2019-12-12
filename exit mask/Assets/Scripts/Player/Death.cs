@@ -68,7 +68,7 @@ public class Death : MonoBehaviour
         gameObject.GetComponent<characterController>().enabled = false;
         playerCamera.GetComponent<CameraController>().is_dead = true;
 
-        ResetAIBehaviour();
+            ResetAIBehaviour();
 
         // start death timer, making the player respawn after it has reached 0
         deathTimerStarted = true; 
@@ -116,6 +116,7 @@ public class Death : MonoBehaviour
         foreach (GameObject wheel in wheels)
         {
             wheel.GetComponent<Wheels>().rayHasHit = false;
+            wheel.GetComponent<Wheels>().SetAlertToFalse();
 
         }
     }
