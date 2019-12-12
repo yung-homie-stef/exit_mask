@@ -36,7 +36,7 @@ public class specialComputer : MonoBehaviour
         if (hackingAllowed && Input.GetKeyDown(KeyCode.E))
         {
             _playerAnimator.SetBool("can_hack", true);
-            FindObjectOfType<audioManager>().Play("Typing");
+            FindObjectOfType<audioManager>().Play("typing");
             StartCoroutine(hackCoroutine);
             transitionStarted = true;
         }
@@ -83,6 +83,6 @@ public class specialComputer : MonoBehaviour
         yield return new WaitForSeconds(waitTime); // wait for the alotted time, set the hack flag to false and disable this script
         _playerAnimator.SetBool("can_hack", false);
         terminalScreens.SetActive(true);
-        FindObjectOfType<audioManager>().Play("Pickup");
+        FindObjectOfType<audioManager>().Play("pickup");
     }
 }

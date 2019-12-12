@@ -45,19 +45,20 @@ public class Chase : MonoBehaviour
             {
                 if (distance < maxDistance)
                 {
+                    gameObject.GetComponent<AudioSource>().enabled = false;
                     GetComponent<Animator>().SetBool("is_chasing", true);
-                    FindObjectOfType<audioManager>().Play("cowled_screaming");
                     Vector3 towardsPlayer = transform.position - Player.transform.position;
                     Vector3 newPosition = transform.position - towardsPlayer;
                     _agent.speed = 5.0f;
                     _agent.SetDestination(newPosition);
-                    gameObject.GetComponent<AudioSource>().enabled = false;
+                    
                     
                 }
 
                 // if you get far enough stop chasing
                 else if (distance > maxDistance)
                 {
+                    FindObjectOfType<audioManager>().Play("cowled_screaming");
                     _agent.speed = 0.5f;
                     GetComponent<Animator>().SetBool("is_chasing", false);
                     gameObject.GetComponent<AudioSource>().enabled = true;

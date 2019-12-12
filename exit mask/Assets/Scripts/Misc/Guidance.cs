@@ -26,7 +26,6 @@ public class Guidance : MonoBehaviour
     void Update()
     {
         distanceBetween = Vector3.Distance(Player.transform.position, gameObject.transform.position);
-        //Debug.Log(distanceBetween);
 
         if (distanceBetween < minimumDistance)
         {
@@ -56,7 +55,7 @@ public class Guidance : MonoBehaviour
 
     private void Activate()
     {
-        
+        FindObjectOfType<audioManager>().Play("heart_machine");
         newRespawnPosition = Player.transform;
         Player.GetComponent<Death>().playerRespawnPoint.position = newRespawnPosition.position;
 
