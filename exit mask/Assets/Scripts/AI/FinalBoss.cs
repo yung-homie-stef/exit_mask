@@ -69,6 +69,7 @@ public class FinalBoss : MonoBehaviour
         StartCoroutine(nothing);
 
         //play death sound 
+        FindObjectOfType<audioManager>().Play("bug_death");
     }
 
     void LoadLevel()

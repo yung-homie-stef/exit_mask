@@ -15,10 +15,15 @@ public class Menu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        if (File.Exists(Application.dataPath + "/save.txt"))
+        if (File.Exists(Application.dataPath + "/save.txt") && LastMenu.isOver == false)
         {
             loadButton.SetActive(true);
         }
+        else if (LastMenu.isOver == true)
+        {
+            loadButton.SetActive(false);
+        }
+            
     }
 
     public void StartGame()
@@ -33,14 +38,8 @@ public class Menu : MonoBehaviour
 
     public void GoBackToMainMenu()
     {
-       
         SceneManager.LoadScene("Scenes/First Release Scenes/Start");
         
-    }
-
-    public void GoBackToMainMenuAfterEnd()
-    {
-        SceneManager.LoadScene("Scenes/First Release Scenes/Start");
     }
 
     public void LoadGame()

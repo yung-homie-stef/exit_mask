@@ -949,10 +949,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 757541725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 218859af09d185b40b6ec1ec814b767d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ee4295b379ee5848b2fa6d82abcacbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadButton: {fileID: 0}
 --- !u!114 &757541727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1734,7 +1733,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 757541726}
-        m_MethodName: GoBackToMainMenuAfterEnd
+        m_MethodName: GoBackToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2215,21 +2214,6 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 357784658}
-    - target: {fileID: 8282395712435526957, guid: 079dafd8ac824ba4694769faac838dfc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8282395712435526957, guid: 079dafd8ac824ba4694769faac838dfc,
-        type: 3}
-      propertyPath: m_Pitch
-      value: 1.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 8282395712435526957, guid: 079dafd8ac824ba4694769faac838dfc,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.14
-      objectReference: {fileID: 0}
     - target: {fileID: 8906650378192084405, guid: 079dafd8ac824ba4694769faac838dfc,
         type: 3}
       propertyPath: m_IsActive
@@ -2299,6 +2283,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8282395712435526957, guid: 079dafd8ac824ba4694769faac838dfc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8282395712435526957, guid: 079dafd8ac824ba4694769faac838dfc,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 8282395712435526957, guid: 079dafd8ac824ba4694769faac838dfc,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079dafd8ac824ba4694769faac838dfc, type: 3}
