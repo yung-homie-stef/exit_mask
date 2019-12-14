@@ -39,6 +39,7 @@ public class wombExit : MonoBehaviour
     public void IncrementBloodCount()
     {
         bloodCount+=1;
+        DeactivateGIF(bloodCount-1);
         Debug.Log(bloodCount);
     }
 

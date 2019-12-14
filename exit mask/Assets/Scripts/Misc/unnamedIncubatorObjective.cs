@@ -13,8 +13,6 @@ public class unnamedIncubatorObjective : MonoBehaviour
     private GameObject[] judicators;
     private bool isDead = false;
     private float judicatorRepositioningTimer = 3.0f;
-    private NavMeshAgent _agent;
-    private Judicator _judicator;
 
     public GameObject Judicator;
     public GameObject Player;
@@ -32,11 +30,8 @@ public class unnamedIncubatorObjective : MonoBehaviour
         _collider = gameObject.GetComponent<BoxCollider>();
         prisonCoroutine = DestroyPrisonBars(3.0f);
 
-        foreach (GameObject jude in judicators)
-        {
-            _judicator = jude.GetComponent<Judicator>();
-            _agent = jude.GetComponent<NavMeshAgent>();
-        }
+       
+
     }
 
     // Update is called once per frame
@@ -50,12 +45,14 @@ public class unnamedIncubatorObjective : MonoBehaviour
         if (isDead)
             judicatorRepositioningTimer -= Time.deltaTime;
 
+
         if (judicatorRepositioningTimer <= 0)
         {
+            judicators = GameObject.FindGameObjectsWithTag("Judicator_Enemy");
             foreach (GameObject jude in judicators)
             {
-                jude.transform.position = _judicator.judicatorTransform.position;
-                _agent.ResetPath();
+                jude.transform.position = jude.GetComponent<Judicator>().judicatorTransform.position;
+                jude.GetComponent<NavMeshAgent>().ResetPath();
             }
 
             judicatorRepositioningTimer = 3.0f;
@@ -145,10 +142,10 @@ public class unnamedIncubatorObjective : MonoBehaviour
         }
 
         // put the judicator back in the cage and turn off the fly screen
-       _judicator.isFollowing = false;
+        Judicator.GetComponent<Judicator>().isFollowing = false;
         Judicator.GetComponent<Animator>().SetBool("is_following", false);
 
-        judicators = GameObject.FindGameObjectsWithTag("Judicator_Enemy");
+        
 
         isDead = true;
 
