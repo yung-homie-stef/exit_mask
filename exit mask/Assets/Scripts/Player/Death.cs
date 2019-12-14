@@ -63,7 +63,7 @@ public class Death : MonoBehaviour
         // restrict them from moving themselves or camera
         _animator.SetBool("is_dead", true);
         _fadeAnimator.SetBool("has_died", true);
-        FindObjectOfType<audioManager>().Play("death");
+        
 
         gameObject.GetComponent<characterController>().enabled = false;
         playerCamera.GetComponent<CameraController>().is_dead = true;
@@ -71,7 +71,9 @@ public class Death : MonoBehaviour
             ResetAIBehaviour();
 
         // start death timer, making the player respawn after it has reached 0
-        deathTimerStarted = true; 
+        deathTimerStarted = true;
+
+        FindObjectOfType<audioManager>().Play("death");
 
     }
 
