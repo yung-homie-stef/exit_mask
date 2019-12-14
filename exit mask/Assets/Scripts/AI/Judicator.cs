@@ -5,9 +5,11 @@ using UnityEngine.AI;
 
 public class Judicator : MonoBehaviour
 {
+    private Vector3 newPosition;
     private NavMeshAgent _agent;
-    public bool isFollowing;
+    private Vector3 towardsPlayer;
 
+    public bool isFollowing;
     public GameObject Player;
     public Transform judicatorTransform;
 
@@ -22,8 +24,8 @@ public class Judicator : MonoBehaviour
     {
         if (isFollowing == true) // begin following the player once their door has been unlocked, triggering this flag
         {
-            Vector3 towardsPlayer = transform.position - Player.transform.position;
-            Vector3 newPosition = transform.position - towardsPlayer;
+             towardsPlayer = transform.position - Player.transform.position;
+             newPosition = transform.position - towardsPlayer;
             _agent.SetDestination(newPosition);
         }
     }

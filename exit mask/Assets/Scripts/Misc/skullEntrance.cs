@@ -41,7 +41,7 @@ public class skullEntrance : MonoBehaviour
     private IEnumerator ActivateSound(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        FindObjectOfType<audioManager>().Play("skull_drone");
+        audioManager.instance.Play("skull_drone");
         this.enabled = false;
     }
 }

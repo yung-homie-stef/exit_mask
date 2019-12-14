@@ -79,7 +79,7 @@ public class BoxCutter_2 : MonoBehaviour
         normalCarpet.SetActive(false);
         foldedCarpet.SetActive(true);
 
-        FindObjectOfType<audioManager>().Play("pickup");
+       audioManager.instance.Play("pickup");
         cutterTextTrigger.GetComponent<BoxCollider>().enabled = true;
 
        

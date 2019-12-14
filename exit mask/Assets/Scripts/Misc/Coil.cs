@@ -18,7 +18,7 @@ public class Coil : MonoBehaviour
     {
         coilSkull.SetActive(true);
         _animator.SetBool("is_triggered", true);
-        FindObjectOfType<audioManager>().Play("skull_drone");
+       audioManager.instance.Play("skull_drone");
     }
 
 }

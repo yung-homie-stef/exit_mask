@@ -54,23 +54,23 @@ public class Menu : MonoBehaviour
                 saveObject.currentSceneName == "Maze" || saveObject.currentSceneName == "Hive" ||
                 saveObject.currentSceneName == "Needle")
             {
-                FindObjectOfType<audioManager>().Play("theme");
+                audioManager.instance.Play("theme");
             }
 
             else if (saveObject.currentSceneName == "Towers" || saveObject.currentSceneName == "Incubator" ||
                 saveObject.currentSceneName == "Helix" || saveObject.currentSceneName == "Root")
             {
-                FindObjectOfType<audioManager>().Play("theme_2");
+                audioManager.instance.Play("theme_2");
             }
 
             else if (saveObject.currentSceneName == "Dark" || saveObject.currentSceneName == "Coil")
             {
-                FindObjectOfType<audioManager>().Play("theme_3");
+                audioManager.instance.Play("theme_3");
             }
 
             else if (saveObject.currentSceneName == "Home")
             {
-                FindObjectOfType<audioManager>().Play("theme_reversed");
+                audioManager.instance.Play("theme_reversed");
             }
 
             SceneManager.LoadScene(saveObject.currentSceneName);

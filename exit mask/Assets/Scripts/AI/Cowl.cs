@@ -12,6 +12,7 @@ public class Cowl : MonoBehaviour
     private NavMeshAgent _agent;
     private float _timer;
     private Animator _animator;
+    private Vector3 newPos;
 
     // Use this for initialization
     void OnEnable()
@@ -29,7 +30,7 @@ public class Cowl : MonoBehaviour
 
         if (_timer >= wanderTimer)
         {
-            Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+            newPos = RandomNavSphere(transform.position, wanderRadius, -1);
             _agent.SetDestination(newPos);
             _timer = 0;
         }

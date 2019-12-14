@@ -73,7 +73,7 @@ public class Death : MonoBehaviour
         // start death timer, making the player respawn after it has reached 0
         deathTimerStarted = true;
 
-        FindObjectOfType<audioManager>().Play("death");
+       audioManager.instance.Play("death");
 
     }
 

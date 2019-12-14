@@ -14,11 +14,13 @@ public class Fume : MonoBehaviour
     private NavMeshAgent _agent;
     private Animator _animator;
     private bool isStun = false;
+    private AudioSource _source;
 
     // Start is called before the first frame update
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
+        _source = GetComponent<AudioSource>();
         _animator = gameObject.GetComponent<Animator>();
 
         // by disabling auto-braking, the moving object does not ease in/out of patrol points
@@ -66,7 +68,7 @@ public class Fume : MonoBehaviour
             isStun = true;
             _agent.isStopped = true;
             intrusiveImageCanvas.SetActive(false);
-            gameObject.GetComponent<AudioSource>().enabled = false;
+            _source.enabled = false;
 
         }
         else if(!stunValue)
@@ -78,7 +80,7 @@ public class Fume : MonoBehaviour
             selfHarmCanvas.SetActive(false);
             player.GetComponent<Animator>().SetBool("can_attack_self", true);
             intrusiveImageCanvas.SetActive(true);
-            gameObject.GetComponent<AudioSource>().enabled = true;
+            _source.enabled = true;
 
         }
     }

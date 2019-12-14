@@ -6,18 +6,22 @@ using UnityEngine;
 public class Wheels : MonoBehaviour
 {
     private Animator _animator;
+    private Animator _cowlAnimator;
     private IEnumerator unAlertCoroutine;
     private float staticTimer;
     private bool timerStarted;
+    private LineRenderer line;
+    private characterController _controller;
+    private RaycastHit _hit;
 
     public float rayDist = 25;
     public bool rayHasHit;
     public GameObject[] cowls;
     public GameObject staticCanvas;
     public GameObject player;
-
-    private LineRenderer line;
     public Transform headPosition;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,7 @@ public class Wheels : MonoBehaviour
         staticTimer = 4.0f;
         rayHasHit = false;
         _animator = gameObject.GetComponent<Animator>();
+        _controller = player.GetComponent<characterController>();
 
         line = GetComponent<LineRenderer>();
         line.startWidth = 0.05f;
@@ -39,12 +44,16 @@ public class Wheels : MonoBehaviour
             Debug.Log(transform.name + " No head position defined.");
             Debug.Break();
         }
+
+        foreach (GameObject cowl in cowls)
+        {
+            _cowlAnimator = cowl.GetComponent<Animator>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit _hit;
         Ray _ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(transform.position, transform.forward * rayDist, Color.green);
 
@@ -54,11 +63,11 @@ public class Wheels : MonoBehaviour
             {
 
                 Debug.Log("ray has hit");
-                FindObjectOfType<audioManager>().Play("alert_static");
+                audioManager.instance.Play("alert_static");
                 
                 foreach (GameObject cowl in cowls)
                 {
-                    cowl.GetComponent<Animator>().SetBool("is_aware", true);
+                    _cowlAnimator.SetBool("is_aware", true);
                 }
 
                 _animator.SetBool("is_alerted", true);
@@ -76,14 +85,14 @@ public class Wheels : MonoBehaviour
         {
             staticTimer -= Time.deltaTime;
             staticCanvas.SetActive(true);
-            player.GetComponent<characterController>().speed = 2;
+            _controller.speed = 2;
 
             if (staticTimer <= 0)
             {
                 timerStarted = false;
                 staticCanvas.SetActive(false);
                 staticTimer = 4.0f;
-                player.GetComponent<characterController>().speed = 5;
+                _controller.speed = 5;
             }
         }
 

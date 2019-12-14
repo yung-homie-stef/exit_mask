@@ -7,12 +7,16 @@ public class characterController : MonoBehaviour
     public float speed;
     public float jumpImpulse;
     public GameObject selfHarmCanvas; // tv static display when player cuts themselves
+
+    private float translation;
+    private float strafe;
     
     private GameObject[] fumes; // array filled by looking for every enemy with proper tag
     private Rigidbody rb;
     private Animator _animator;
     private float stabTime;
     private bool stabTimerStarted;
+    private Death _death;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,7 @@ public class characterController : MonoBehaviour
 
         rb = gameObject.GetComponent<Rigidbody>();
         _animator = gameObject.GetComponent<Animator>();
+        _death = gameObject.GetComponent<Death>();
 
         _animator.SetBool("can_attack_self", true);
 
@@ -36,8 +41,8 @@ public class characterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float translation = Input.GetAxis("Vertical") * speed;
-        float strafe = Input.GetAxis("Horizontal") * speed;
+        translation = Input.GetAxis("Vertical") * speed;
+        strafe = Input.GetAxis("Horizontal") * speed;
         translation *= Time.deltaTime;
         strafe *= Time.deltaTime;
 
@@ -61,7 +66,7 @@ public class characterController : MonoBehaviour
 
             _animator.SetBool("is_attacking_self", false);
 
-            FindObjectOfType<audioManager>().Play("self_harm_static");
+            audioManager.instance.Play("self_harm_static");
 
             selfHarmCanvas.SetActive(true); // once the self harm stun on the enemies is finished, disable the canvas overlay
             
@@ -94,9 +99,9 @@ public class characterController : MonoBehaviour
         }
         #endregion 
 
-        if (gameObject.transform.position.y < gameObject.GetComponent<Death>().killVolume)
+        if (gameObject.transform.position.y < _death.killVolume)
         {
-            gameObject.GetComponent<Death>().Kill();
+           _death.Kill();
         }
 
 

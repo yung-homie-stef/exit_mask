@@ -23,8 +23,8 @@ public class loadingScreen : MonoBehaviour
         string theme_to_stop_name = theme_to_stop.clip.name;
         _animator = image.GetComponent<Animator>();
 
-       FindObjectOfType<audioManager>().Play(theme_name);
-       FindObjectOfType<audioManager>().Stop(theme_to_stop_name);
+       audioManager.instance.Play(theme_name);
+       audioManager.instance.Stop(theme_to_stop_name);
     }
 
     private void Update()

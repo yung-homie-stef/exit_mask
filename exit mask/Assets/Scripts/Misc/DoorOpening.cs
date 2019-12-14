@@ -39,7 +39,7 @@ public class DoorOpening : MonoBehaviour
     private void OpenDoor()
     {
         _animator.SetBool("open_door", true); // play the door opening animation
-        FindObjectOfType<audioManager>().Play("door_opening");
+        audioManager.instance.Play("door_opening");
     }
 
 

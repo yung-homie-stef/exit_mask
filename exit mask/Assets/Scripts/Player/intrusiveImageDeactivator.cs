@@ -64,8 +64,8 @@ public class intrusiveImageDeactivator : MonoBehaviour
         if (timersAreSet == false)  // when the image is activated, create a timer for its time activated and deactivated
         {
             timersAreSet = true;
-            imageActiveTimer = GenerateRandomTimer(3,6);
-            imageDisabledTimer = GenerateRandomTimer(minDisable, maxDisable);
+            imageActiveTimer = Random.Range(3, 6);
+            imageDisabledTimer = Random.Range(minDisable, maxDisable);
             transform.GetChild(0).gameObject.transform.position = GenerateRandomCanvasPos(100, Screen.width - 100, 100, Screen.height - 100); // generate a random position
 
             activeTimerSet = true;
@@ -95,12 +95,6 @@ public class intrusiveImageDeactivator : MonoBehaviour
         }
 
 
-    }
-
-    private float GenerateRandomTimer(float min, float max)
-    {
-        return Random.Range(min, max);
-       
     }
 
     private Vector3 GenerateRandomCanvasPos(float minX, float maxX, float minY, float maxY)

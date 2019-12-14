@@ -49,7 +49,7 @@ public class Computer : MonoBehaviour
     void Hack()
     {
         _animator.SetBool("can_hack", true);
-        FindObjectOfType<audioManager>().Play("Typing");
+        audioManager.instance.Play("typing");
 
          // this ensures that the player cannot hack the same computer 5 times and exit the maze very easily.
          if (_collider.enabled == true)
@@ -67,7 +67,7 @@ public class Computer : MonoBehaviour
         _animator.SetBool("can_hack", false);
         Exit.GetComponent<mazeExit>().DecrementPCCount();
         terminalScreens.SetActive(true);
-        FindObjectOfType<audioManager>().Play("computer_boot_up");
+        audioManager.instance.Play("computer_boot_up");
 
         enabled = false;
     }

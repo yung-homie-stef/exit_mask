@@ -1211,7 +1211,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7074510466555645267, guid: b463db0f19be0d94d844f353e8c2f677, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b463db0f19be0d94d844f353e8c2f677, type: 3}
 --- !u!1 &1224319432
 GameObject:
@@ -2683,6 +2684,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2c8dc2ec1aa79814dba0b76a10f1c173, type: 2}
+    - target: {fileID: 1087168433499484823, guid: 1a546eec564a1cd438f38cfef12cf948,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a546eec564a1cd438f38cfef12cf948, type: 3}
 --- !u!1 &2119369449 stripped

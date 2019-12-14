@@ -67,7 +67,7 @@ public class BoxCutter : MonoBehaviour
         equippableBoxCutter.SetActive(true);
         _inventory.SetBoxCutterStatus(true);
         cutterTextTrigger.SetActive(true);
-        FindObjectOfType<audioManager>().Play("pickup");
+        audioManager.instance.Play("pickup");
 
 
     }

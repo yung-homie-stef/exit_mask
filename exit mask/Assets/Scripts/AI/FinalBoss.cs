@@ -27,8 +27,8 @@ public class FinalBoss : MonoBehaviour
         timerRunning = false;
 
         // music for this level stems from this gameobject
-        FindObjectOfType<audioManager>().Play("theme_reversed");
-        FindObjectOfType<audioManager>().Stop("theme_3");
+       audioManager.instance.Play("theme_reversed");
+       audioManager.instance.Stop("theme_3");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -69,7 +69,7 @@ public class FinalBoss : MonoBehaviour
         StartCoroutine(nothing);
 
         //play death sound 
-        FindObjectOfType<audioManager>().Play("bug_death");
+        audioManager.instance.Play("bug_death");
     }
 
     void LoadLevel()

@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class objectiveBasedRespawning : MonoBehaviour
 {
     private GameObject Player;
+    private unnamedIncubatorObjective _objective;
 
     public List<GameObject> machinesList = new List<GameObject>();
     public GameObject firstSpawn;

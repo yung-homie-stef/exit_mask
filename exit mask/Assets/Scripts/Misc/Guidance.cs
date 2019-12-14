@@ -56,10 +56,9 @@ public class Guidance : MonoBehaviour
     private void Activate()
     {
         Destroy(hintImage);
-        FindObjectOfType<audioManager>().Play("heart_machine");
         newRespawnPosition = Player.transform;
         Player.GetComponent<Death>().playerRespawnPoint.position = newRespawnPosition.position;
 
-        
+        audioManager.instance.Play("heart_machine");
     }
 }

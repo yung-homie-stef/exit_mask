@@ -32,8 +32,8 @@ namespace UnityStandardAssets.ImageEffects
             // disable first overlayed camera so that player only sees game through black on white
             whiteCamera.SetActive(false);
             // interrupt theme of scene and play harsh noise insteads
-            FindObjectOfType<audioManager>().Stop("theme_reversed");
-            FindObjectOfType<audioManager>().Play("harsh_noise_wall");
+           audioManager.instance.Stop("theme_reversed");
+           audioManager.instance.Play("harsh_noise_wall");
             staticActive = true;
         }
     }

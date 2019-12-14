@@ -31,13 +31,4 @@ public class weaponLogic : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        // 
-        if (other.gameObject.tag == "Fume_Enemy")
-        {
-        }
-
-        //TODO: Add actual damage logic
-    }
 }

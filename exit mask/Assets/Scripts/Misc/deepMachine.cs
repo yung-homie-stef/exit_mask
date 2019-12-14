@@ -13,6 +13,8 @@ public class deepMachine : MonoBehaviour
     private GameObject[] judicators;
     private bool isDead = false;
     private float judicatorRepositioningTimer = 3.0f;
+    private NavMeshAgent _agent;
+    private Judicator _judicator;
 
     public GameObject Judicator;
     public GameObject Player;
@@ -28,6 +30,12 @@ public class deepMachine : MonoBehaviour
     {
         _collider = gameObject.GetComponent<BoxCollider>();
         prisonCoroutine = DestroyPrisonBars(3.0f);
+
+        foreach (GameObject jude in judicators)
+        {
+            _judicator = jude.GetComponent<Judicator>();
+            _agent = jude.GetComponent<NavMeshAgent>();
+        }
     }
 
     // Update is called once per frame
@@ -45,8 +53,8 @@ public class deepMachine : MonoBehaviour
         {
             foreach (GameObject jude in judicators)
             {
-                jude.transform.position = jude.GetComponent<Judicator>().judicatorTransform.position;
-                jude.GetComponent<NavMeshAgent>().ResetPath();
+                jude.transform.position = _judicator.judicatorTransform.position;
+                _agent.ResetPath();
             }
 
             judicatorRepositioningTimer = 3.0f;
@@ -71,10 +79,10 @@ public class deepMachine : MonoBehaviour
     {
         canIncrement = true;
 
-        //FindObjectOfType<audioManager>().Play("Heart_Machine");
+        
 
         // activate the chasing capabilities of the judicator
-        Judicator.GetComponent<Judicator>().isFollowing = true;
+        _judicator.isFollowing = true;
         Judicator.GetComponent<Animator>().SetBool("is_following", true);
 
         //activate fly screens
@@ -106,6 +114,8 @@ public class deepMachine : MonoBehaviour
 
         this.enabled = false;
         #endregion
+
+        audioManager.instance.Play("heart_machine");
     }
 
     private IEnumerator DestroyPrisonBars(float waitTime)
@@ -134,7 +144,7 @@ public class deepMachine : MonoBehaviour
         }
 
         // put the judicator back in the cage and turn off the fly screen
-        Judicator.GetComponent<Judicator>().isFollowing = false;
+        _judicator.isFollowing = false;
         Judicator.GetComponent<Animator>().SetBool("is_following", false);
 
         judicators = GameObject.FindGameObjectsWithTag("Judicator_Enemy");

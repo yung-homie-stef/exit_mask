@@ -53,7 +53,7 @@ public class Pause : MonoBehaviour
         SceneManager.LoadScene("Start");
         Time.timeScale = 1.0f;
         isPaused = false;
-        FindObjectOfType<audioManager>().StopAllSounds();
+        audioManager.instance.StopAllSounds();
     }
 
     public void Quit()
