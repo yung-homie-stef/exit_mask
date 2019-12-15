@@ -45,10 +45,6 @@ public class Wheels : MonoBehaviour
             Debug.Break();
         }
 
-        foreach (GameObject cowl in cowls)
-        {
-            _cowlAnimator = cowl.GetComponent<Animator>();
-        }
     }
 
     // Update is called once per frame
@@ -63,15 +59,16 @@ public class Wheels : MonoBehaviour
             {
 
                 Debug.Log("ray has hit");
-                audioManager.instance.Play("alert_static");
+                
                 
                 foreach (GameObject cowl in cowls)
                 {
-                    _cowlAnimator.SetBool("is_aware", true);
+                    cowl.GetComponent<Animator>().SetBool("is_aware", true);
                 }
 
                 _animator.SetBool("is_alerted", true);
                 rayHasHit = true;
+                audioManager.instance.Play("alert_static");
             }
         }
 
