@@ -5,7 +5,6 @@ using UnityEngine.Audio;
 
 public class Settings : MonoBehaviour
 {
-    public AudioMixer audioMixer;
     public GameObject settingsMenu;
     public GameObject pauseMenu;
     public bool isMuted = false;
@@ -14,8 +13,7 @@ public class Settings : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            settingsMenu.SetActive(false);
-            pauseMenu.SetActive(true);
+            GoBack();
         }
 
         if (isMuted == true)
@@ -28,20 +26,15 @@ public class Settings : MonoBehaviour
         }
     }
 
-    public void SetMusicVolume(float volume)
-    {
-        audioMixer.SetFloat("music_volume", volume);
-        Debug.Log(volume);
-    }
-
-    public void SetSFXVolume(float volume)
-    {
-        audioMixer.SetFloat("sfx_volume", volume);
-    }
-
     public void TriggerMute()
     {
         isMuted = !isMuted;
+    }
+
+    public void GoBack()
+    {
+        settingsMenu.SetActive(false);
+        pauseMenu.SetActive(true);
     }
 
 }

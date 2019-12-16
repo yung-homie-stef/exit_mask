@@ -8,6 +8,7 @@ public class Guidance : MonoBehaviour
     public Image hintImage;
     public GameObject Player;
     public GameObject Wires;
+    public GameObject screenImage;
     public float minimumDistance;
 
     private bool activatingAllowed;
@@ -58,6 +59,7 @@ public class Guidance : MonoBehaviour
         Destroy(hintImage);
         newRespawnPosition = Player.transform;
         Player.GetComponent<Death>().playerRespawnPoint.position = newRespawnPosition.position;
+        screenImage.SetActive(true);
 
         audioManager.instance.Play("heart_machine");
     }
