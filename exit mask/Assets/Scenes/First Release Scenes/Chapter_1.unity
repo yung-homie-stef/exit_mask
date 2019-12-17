@@ -1156,6 +1156,209 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d185ca346692534397614ff22c8f64f, type: 3}
+--- !u!1 &1657953092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1657953094}
+  - component: {fileID: 1657953093}
+  m_Layer: 0
+  m_Name: audio_manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1657953093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657953092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd7906b6aaea3842bbfbfc4dd3ad2fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: a8f14c695ff960f4a9d192f3bbd7d6dd, type: 3}
+    mixer: {fileID: 0}
+    name: Flesh_Rip
+    loop: 0
+    ignorePause: 0
+    volume: 0.926
+    pitch: 1.29
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d8be9e63344538a438c8e0b1c46f8e97, type: 3}
+    mixer: {fileID: 24300002, guid: 8661eca67a5f3f44999a85d2c06887d7, type: 2}
+    name: Theme
+    loop: 1
+    ignorePause: 1
+    volume: 0.315
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 67f2a8f6446c6f3418ba862cd4cd2414, type: 3}
+    mixer: {fileID: 0}
+    name: Self_Harm_Static
+    loop: 0
+    ignorePause: 0
+    volume: 0.25
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: b5456deb35178334880f603547e5bd6f, type: 3}
+    mixer: {fileID: 0}
+    name: Door_Opening
+    loop: 0
+    ignorePause: 0
+    volume: 0.535
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d85026f2f85fc174e9848aca96cce43b, type: 3}
+    mixer: {fileID: 0}
+    name: Computer_Boot_Up
+    loop: 0
+    ignorePause: 0
+    volume: 0.13
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 942daad2f6f18b042b5fb7a2c0966b20, type: 3}
+    mixer: {fileID: 0}
+    name: Typing
+    loop: 0
+    ignorePause: 0
+    volume: 0.68
+    pitch: 0.76
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: c6b954f7fe2122f4a97d5be730298e01, type: 3}
+    mixer: {fileID: 0}
+    name: Death
+    loop: 0
+    ignorePause: 0
+    volume: 0.68
+    pitch: 0.76
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: f7e39bfbfc79bad43a501b95b4ee7a0d, type: 3}
+    mixer: {fileID: 0}
+    name: Pickup
+    loop: 0
+    ignorePause: 0
+    volume: 0.154
+    pitch: 1.34
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: ebe751a3a34507d41ade9db29d3a1970, type: 3}
+    mixer: {fileID: 0}
+    name: Skull_Drone
+    loop: 0
+    ignorePause: 0
+    volume: 0.274
+    pitch: 1.34
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 4541afacb4477104ea7e97fe615382c1, type: 3}
+    mixer: {fileID: -8767167636328756146, guid: 553c44a48dcbb0d4ebc9ab1017e92dc3,
+      type: 2}
+    name: theme_2
+    loop: 1
+    ignorePause: 1
+    volume: 1
+    pitch: 1.34
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 78d4ddfb0e3bf1a40a0556216d83604e, type: 3}
+    mixer: {fileID: 0}
+    name: coffin_ping
+    loop: 0
+    ignorePause: 0
+    volume: 0.721
+    pitch: 1.5
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: e602a7f66ac1ff0449ba51c39f2c8211, type: 3}
+    mixer: {fileID: 0}
+    name: harsh_noise_wall
+    loop: 0
+    ignorePause: 0
+    volume: 0.419
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: ad5764eb82dc7a34f8ebaebd07648f86, type: 3}
+    mixer: {fileID: -3516234277122858766, guid: 553c44a48dcbb0d4ebc9ab1017e92dc3,
+      type: 2}
+    name: theme_reversed
+    loop: 1
+    ignorePause: 1
+    volume: 0.419
+    pitch: 1.34
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: cb36032b2cd93da439eac4b82bb97851, type: 3}
+    mixer: {fileID: 5271726565002062455, guid: d88b31a10bbb31149bd379caf22371ed, type: 2}
+    name: dupe
+    loop: 0
+    ignorePause: 0
+    volume: 0
+    pitch: 0.1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 11cc71f5b31fee44994d8daa9e79d438, type: 3}
+    mixer: {fileID: -2888162440560329846, guid: 553c44a48dcbb0d4ebc9ab1017e92dc3,
+      type: 2}
+    name: theme_3
+    loop: 1
+    ignorePause: 1
+    volume: 0.85
+    pitch: 1.03
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 656b5b0a7d914dd4ea74f1bd634b2dfd, type: 3}
+    mixer: {fileID: -2888162440560329846, guid: 553c44a48dcbb0d4ebc9ab1017e92dc3,
+      type: 2}
+    name: cowled_screaming
+    loop: 0
+    ignorePause: 0
+    volume: 0.544
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 38b42b3b1f77abc448ed5dbf77c06043, type: 3}
+    mixer: {fileID: -2888162440560329846, guid: 553c44a48dcbb0d4ebc9ab1017e92dc3,
+      type: 2}
+    name: alert_static
+    loop: 0
+    ignorePause: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 041d5a3aeb3b7434a9d74433c92c0fba, type: 3}
+    mixer: {fileID: -2888162440560329846, guid: 553c44a48dcbb0d4ebc9ab1017e92dc3,
+      type: 2}
+    name: heart_machine
+    loop: 0
+    ignorePause: 0
+    volume: 0.647
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d50804f32948bd141af57158c9e0213f, type: 3}
+    mixer: {fileID: -2888162440560329846, guid: 553c44a48dcbb0d4ebc9ab1017e92dc3,
+      type: 2}
+    name: bug_death
+    loop: 0
+    ignorePause: 0
+    volume: 0.647
+    pitch: 1
+    source: {fileID: 0}
+--- !u!4 &1657953094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657953092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.573273, y: -1.5191307, z: 20.636585}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1797057330
 GameObject:
   m_ObjectHideFlags: 0

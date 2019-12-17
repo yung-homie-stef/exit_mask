@@ -228,7 +228,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -388, y: 140}
+  m_AnchoredPosition: {x: -844, y: 334}
   m_SizeDelta: {x: 243.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &316553290
@@ -742,13 +742,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444051427}
-  m_LocalRotation: {x: -0.00000012760387, y: -0.052205972, z: -0.00000015746586, w: 0.9986364}
-  m_LocalPosition: {x: -0.2, y: -0, z: -0.5}
+  m_LocalRotation: {x: 0.24055369, y: -0.17693725, z: 0.044646565, w: 0.9533278}
+  m_LocalPosition: {x: 1.26, y: 3.27, z: -0.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -5.985, z: 0}
+  m_LocalEulerAnglesHint: {x: 28.324001, y: -21.029001, z: 0}
 --- !u!82 &444051435
 AudioSource:
   m_ObjectHideFlags: 0
@@ -872,7 +872,7 @@ RectTransform:
   m_GameObject: {fileID: 570364438}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.67644846, y: 0.67644846, z: 0.67644846}
+  m_LocalScale: {x: 1.1084961, y: 1.1084961, z: 1.1084961}
   m_Children:
   - {fileID: 178523619}
   m_Father: {fileID: 1543425722}
@@ -880,7 +880,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -342, y: 210}
+  m_AnchoredPosition: {x: -722.6, y: 374.2}
   m_SizeDelta: {x: 488.9, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &570364440
@@ -981,12 +981,12 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1024, y: 768}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1033,6 +1033,209 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &771403712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 771403714}
+  - component: {fileID: 771403713}
+  m_Layer: 0
+  m_Name: audio_manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &771403713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771403712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd7906b6aaea3842bbfbfc4dd3ad2fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: a8f14c695ff960f4a9d192f3bbd7d6dd, type: 3}
+    mixer: {fileID: 0}
+    name: Flesh_Rip
+    loop: 0
+    ignorePause: 0
+    volume: 0.926
+    pitch: 1.29
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d8be9e63344538a438c8e0b1c46f8e97, type: 3}
+    mixer: {fileID: 24300002, guid: 8661eca67a5f3f44999a85d2c06887d7, type: 2}
+    name: Theme
+    loop: 1
+    ignorePause: 1
+    volume: 0.315
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 67f2a8f6446c6f3418ba862cd4cd2414, type: 3}
+    mixer: {fileID: 0}
+    name: Self_Harm_Static
+    loop: 0
+    ignorePause: 0
+    volume: 0.25
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: b5456deb35178334880f603547e5bd6f, type: 3}
+    mixer: {fileID: 0}
+    name: Door_Opening
+    loop: 0
+    ignorePause: 0
+    volume: 0.535
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d85026f2f85fc174e9848aca96cce43b, type: 3}
+    mixer: {fileID: 0}
+    name: Computer_Boot_Up
+    loop: 0
+    ignorePause: 0
+    volume: 0.13
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 942daad2f6f18b042b5fb7a2c0966b20, type: 3}
+    mixer: {fileID: 0}
+    name: Typing
+    loop: 0
+    ignorePause: 0
+    volume: 0.68
+    pitch: 0.76
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: c6b954f7fe2122f4a97d5be730298e01, type: 3}
+    mixer: {fileID: 0}
+    name: Death
+    loop: 0
+    ignorePause: 0
+    volume: 0.68
+    pitch: 0.76
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: f7e39bfbfc79bad43a501b95b4ee7a0d, type: 3}
+    mixer: {fileID: 0}
+    name: Pickup
+    loop: 0
+    ignorePause: 0
+    volume: 0.154
+    pitch: 1.34
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: ebe751a3a34507d41ade9db29d3a1970, type: 3}
+    mixer: {fileID: 0}
+    name: Skull_Drone
+    loop: 0
+    ignorePause: 0
+    volume: 0.274
+    pitch: 1.34
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 4541afacb4477104ea7e97fe615382c1, type: 3}
+    mixer: {fileID: -8767167636328756146, guid: 553c44a48dcbb0d4ebc9ab1017e92dc3,
+      type: 2}
+    name: theme_2
+    loop: 1
+    ignorePause: 1
+    volume: 1
+    pitch: 1.34
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 78d4ddfb0e3bf1a40a0556216d83604e, type: 3}
+    mixer: {fileID: 0}
+    name: coffin_ping
+    loop: 0
+    ignorePause: 0
+    volume: 0.721
+    pitch: 1.5
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: e602a7f66ac1ff0449ba51c39f2c8211, type: 3}
+    mixer: {fileID: 0}
+    name: harsh_noise_wall
+    loop: 0
+    ignorePause: 0
+    volume: 0.419
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: ad5764eb82dc7a34f8ebaebd07648f86, type: 3}
+    mixer: {fileID: -3516234277122858766, guid: 553c44a48dcbb0d4ebc9ab1017e92dc3,
+      type: 2}
+    name: theme_reversed
+    loop: 1
+    ignorePause: 1
+    volume: 0.419
+    pitch: 1.34
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: cb36032b2cd93da439eac4b82bb97851, type: 3}
+    mixer: {fileID: 5271726565002062455, guid: d88b31a10bbb31149bd379caf22371ed, type: 2}
+    name: dupe
+    loop: 0
+    ignorePause: 0
+    volume: 0
+    pitch: 0.1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 11cc71f5b31fee44994d8daa9e79d438, type: 3}
+    mixer: {fileID: -2888162440560329846, guid: 553c44a48dcbb0d4ebc9ab1017e92dc3,
+      type: 2}
+    name: theme_3
+    loop: 1
+    ignorePause: 1
+    volume: 0.85
+    pitch: 1.03
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 656b5b0a7d914dd4ea74f1bd634b2dfd, type: 3}
+    mixer: {fileID: -2888162440560329846, guid: 553c44a48dcbb0d4ebc9ab1017e92dc3,
+      type: 2}
+    name: cowled_screaming
+    loop: 0
+    ignorePause: 0
+    volume: 0.544
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 38b42b3b1f77abc448ed5dbf77c06043, type: 3}
+    mixer: {fileID: -2888162440560329846, guid: 553c44a48dcbb0d4ebc9ab1017e92dc3,
+      type: 2}
+    name: alert_static
+    loop: 0
+    ignorePause: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 041d5a3aeb3b7434a9d74433c92c0fba, type: 3}
+    mixer: {fileID: -2888162440560329846, guid: 553c44a48dcbb0d4ebc9ab1017e92dc3,
+      type: 2}
+    name: heart_machine
+    loop: 0
+    ignorePause: 0
+    volume: 0.647
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d50804f32948bd141af57158c9e0213f, type: 3}
+    mixer: {fileID: -2888162440560329846, guid: 553c44a48dcbb0d4ebc9ab1017e92dc3,
+      type: 2}
+    name: bug_death
+    loop: 0
+    ignorePause: 0
+    volume: 0.647
+    pitch: 1
+    source: {fileID: 0}
+--- !u!4 &771403714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771403712}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.573273, y: -1.5191307, z: 20.636585}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &776130510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,7 +1369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -403, y: 114}
+  m_AnchoredPosition: {x: -859, y: 308}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &780949450
@@ -1323,7 +1526,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -398, y: 6}
+  m_AnchoredPosition: {x: -854, y: 200}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &877104444
@@ -1686,7 +1889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 338, y: -296}
+  m_AnchoredPosition: {x: 509, y: -264}
   m_SizeDelta: {x: 212.2, y: 40.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1418023025
@@ -1816,7 +2019,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -380, y: 46}
+  m_AnchoredPosition: {x: -836, y: 240}
   m_SizeDelta: {x: 264.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1513383531
@@ -1988,12 +2191,12 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2214,6 +2417,21 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 357784658}
+    - target: {fileID: 8282395712435526957, guid: 079dafd8ac824ba4694769faac838dfc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8282395712435526957, guid: 079dafd8ac824ba4694769faac838dfc,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 8282395712435526957, guid: 079dafd8ac824ba4694769faac838dfc,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.14
+      objectReference: {fileID: 0}
     - target: {fileID: 8906650378192084405, guid: 079dafd8ac824ba4694769faac838dfc,
         type: 3}
       propertyPath: m_IsActive
@@ -2283,21 +2501,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8282395712435526957, guid: 079dafd8ac824ba4694769faac838dfc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8282395712435526957, guid: 079dafd8ac824ba4694769faac838dfc,
-        type: 3}
-      propertyPath: m_Pitch
-      value: 1.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 8282395712435526957, guid: 079dafd8ac824ba4694769faac838dfc,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079dafd8ac824ba4694769faac838dfc, type: 3}
@@ -2524,7 +2727,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 380, y: -344}
+  m_AnchoredPosition: {x: 554, y: -322}
   m_SizeDelta: {x: 136.7, y: 34.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2045998427

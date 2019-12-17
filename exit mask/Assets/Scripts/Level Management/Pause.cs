@@ -7,16 +7,16 @@ using UnityEngine.Audio;
 
 public class Pause : MonoBehaviour
 {
+    public bool isMuted = false;
     public static bool isPaused = false;
     public GameObject pauseMenu;
-    public GameObject settingsMenu;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused && settingsMenu.activeSelf == false)
+            if (isPaused)
             {
                 ResumeGame();
                 AudioListener.pause = false;
@@ -28,6 +28,15 @@ public class Pause : MonoBehaviour
                 Cursor.visible = true;
                 AudioListener.pause = true;
             }
+        }
+
+        if (isMuted == true)
+        {
+            AudioListener.volume = 0;
+        }
+        else
+        {
+            AudioListener.volume = 1;
         }
     }
 
@@ -50,7 +59,7 @@ public class Pause : MonoBehaviour
     public void BackToMainMenu()
     {
         pauseMenu.SetActive(false);
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("Scenes/First Release Scenes/Start");
         Time.timeScale = 1.0f;
         isPaused = false;
         audioManager.instance.StopAllSounds();
@@ -61,5 +70,10 @@ public class Pause : MonoBehaviour
         Application.Quit();
     }
 
-    
+
+  public void TriggerMute()
+  {
+      isMuted = !isMuted;
+  }
+
 }
