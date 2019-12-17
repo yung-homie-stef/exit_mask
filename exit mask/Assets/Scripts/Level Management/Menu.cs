@@ -8,6 +8,7 @@ using System.IO;
 public class Menu : MonoBehaviour
 {
     public GameObject loadButton;
+    public GameObject fadeOut;
     private GameObject player;
 
     private void Update()
@@ -44,6 +45,8 @@ public class Menu : MonoBehaviour
 
     public void LoadGame()
     {
+        fadeOut.GetComponent<Animator>().SetBool("level_completed", true);
+
         if (File.Exists(Application.dataPath + "/save.txt"))
         {
             string savestring = File.ReadAllText(Application.dataPath + "/save.txt");
