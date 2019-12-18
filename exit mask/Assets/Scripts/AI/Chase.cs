@@ -52,6 +52,7 @@ public class Chase : MonoBehaviour
                 if (distance < maxDistance)
                 {
                     _source.enabled = false;
+
                     _animator.SetBool("is_chasing", true);
                     Vector3 towardsPlayer = transform.position - Player.transform.position;
                     Vector3 newPosition = transform.position - towardsPlayer;

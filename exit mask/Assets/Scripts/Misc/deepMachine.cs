@@ -10,7 +10,6 @@ public class deepMachine : MonoBehaviour
     private IEnumerator prisonCoroutine;
     private Transform newRespawnPosition;
     private bool canIncrement = true;
-    private GameObject[] judicators;
     private bool isDead = false;
     private float judicatorRepositioningTimer = 3.0f;
     private NavMeshAgent _agent;
@@ -30,12 +29,7 @@ public class deepMachine : MonoBehaviour
     {
         _collider = gameObject.GetComponent<BoxCollider>();
         prisonCoroutine = DestroyPrisonBars(3.0f);
-
-        foreach (GameObject jude in judicators)
-        {
-            _judicator = jude.GetComponent<Judicator>();
-            _agent = jude.GetComponent<NavMeshAgent>();
-        }
+        _judicator = Judicator.GetComponent<Judicator>();
     }
 
     // Update is called once per frame
@@ -51,11 +45,7 @@ public class deepMachine : MonoBehaviour
 
         if (judicatorRepositioningTimer <= 0)
         {
-            foreach (GameObject jude in judicators)
-            {
-                jude.transform.position = _judicator.judicatorTransform.position;
-                _agent.ResetPath();
-            }
+
 
             judicatorRepositioningTimer = 3.0f;
             isDead = false;
@@ -147,7 +137,6 @@ public class deepMachine : MonoBehaviour
         _judicator.isFollowing = false;
         Judicator.GetComponent<Animator>().SetBool("is_following", false);
 
-        judicators = GameObject.FindGameObjectsWithTag("Judicator_Enemy");
 
         isDead = true;
 
