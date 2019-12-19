@@ -30,4 +30,9 @@ public class Judicator : MonoBehaviour
         }
     }
 
+    public void Respawn()
+    {
+        this.gameObject.transform.position = judicatorTransform.position;
+    }
+
 }

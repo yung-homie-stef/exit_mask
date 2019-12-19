@@ -29,9 +29,7 @@ public class unnamedIncubatorObjective : MonoBehaviour
     {
         _collider = gameObject.GetComponent<BoxCollider>();
         prisonCoroutine = DestroyPrisonBars(3.0f);
-
-       
-
+        judicators = GameObject.FindGameObjectsWithTag("Judicator_Enemy");
     }
 
     // Update is called once per frame
@@ -48,10 +46,11 @@ public class unnamedIncubatorObjective : MonoBehaviour
 
         if (judicatorRepositioningTimer <= 0)
         {
-            judicators = GameObject.FindGameObjectsWithTag("Judicator_Enemy");
+           
+
             foreach (GameObject jude in judicators)
             {
-                jude.transform.position = jude.GetComponent<Judicator>().judicatorTransform.position;
+                jude.GetComponent<Judicator>().Respawn();
                 jude.GetComponent<NavMeshAgent>().ResetPath();
             }
 
@@ -145,7 +144,6 @@ public class unnamedIncubatorObjective : MonoBehaviour
         Judicator.GetComponent<Judicator>().isFollowing = false;
         Judicator.GetComponent<Animator>().SetBool("is_following", false);
 
-        
 
         isDead = true;
 

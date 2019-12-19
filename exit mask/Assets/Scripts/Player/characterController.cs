@@ -74,8 +74,8 @@ public class characterController : MonoBehaviour
         #endregion
 
         #region Player Input
-        if (Input.GetKeyDown("space"))
-            rb.AddForce(new Vector3(0, jumpImpulse, 0), ForceMode.Impulse);            // commented out so I can continue using this for dev hacks later on
+        //if (Input.GetKeyDown("space"))
+        //    rb.AddForce(new Vector3(0, jumpImpulse, 0), ForceMode.Impulse);            // commented out so I can continue using this for dev hacks later on
 
         // left click to attack
         if (Input.GetMouseButtonDown(0))
