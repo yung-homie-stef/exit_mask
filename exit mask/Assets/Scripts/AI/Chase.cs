@@ -27,6 +27,7 @@ public class Chase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         distance = Vector3.Distance(transform.position, Player.transform.position);
 
         // if the wheelcast raycast has been hit AND you are too close to a cowled begin chase
@@ -51,15 +52,13 @@ public class Chase : MonoBehaviour
             {
                 if (distance < maxDistance)
                 {
-                    _source.enabled = false;
-
                     _animator.SetBool("is_chasing", true);
                     Vector3 towardsPlayer = transform.position - Player.transform.position;
                     Vector3 newPosition = transform.position - towardsPlayer;
                     _agent.speed = 5.0f;
                     _agent.SetDestination(newPosition);
-                    
-                    
+                    _source.enabled = false;
+
                 }
 
                 // if you get far enough stop chasing

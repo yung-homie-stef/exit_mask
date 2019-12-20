@@ -42,6 +42,6 @@ public class skullEntrance : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         audioManager.instance.Play("skull_drone");
-        this.enabled = false;
+        Destroy(gameObject);
     }
 }
